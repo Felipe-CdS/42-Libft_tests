@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libtests.h                                         :+:      :+:    :+:   */
+/*   test_tolower.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/20 17:56:15 by fcoutinh         ###   ########.fr       */
+/*   Created: 2022/05/20 17:53:34 by fcoutinh          #+#    #+#             */
+/*   Updated: 2022/05/20 17:57:00 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-#include <ctype.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
+#include "libtests.h"
 #include "libft.h"
 
-void	test_isalpha();
-void	test_isdigit();
-void	test_isalnum();
-void	test_isascii();
-void	test_isprint();
-void	test_strlen();
-void	test_memset();
-void	test_bzero();
-void	test_memcpy(); 
-void	test_toupper();
-void	test_tolower();
-void	test_atoi();
-
-void	print_char_n_null();
+void test_tolower()
+{
+	char x[10];
+	printf("\n ft_tolower() tests: \n");
+	for(int i = 32; i < 128; ++i) printf("%c", i); 
+	printf(" \n");
+	for(int i = 32; i < 128; ++i) printf("%c", tolower(i));
+	printf("\n");
+	for(int i = 32; i < 128; ++i) printf("%c", ft_tolower(i));
+	printf("\n");
+}

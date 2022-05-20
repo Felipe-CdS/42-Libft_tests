@@ -1,7 +1,7 @@
 CC=gcc
 NAME=a.out
 CFLAGS=-Wall -Wextra -Werror
-TESTS_OBJ=print_char_n_null.o test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_atoi.o
+TESTS_OBJ=print_char_n_null.o test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_tolower.o test_atoi.o
 
 all: $(NAME)
 
@@ -46,6 +46,9 @@ test_memcpy.o:		test_memcpy.c
 
 test_toupper.o:		test_toupper.c
 	$(CC) -c test_toupper.c -o test_toupper.o
+
+test_tolower.o:		test_tolower.c
+	$(CC) -c test_tolower.c -o test_tolower.o
 
 test_atoi.o: 		test_atoi.c
 	$(CC) -c test_atoi.c	-o test_atoi.o

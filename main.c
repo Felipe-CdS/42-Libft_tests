@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:27:50 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/20 13:40:44 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:54:23 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -32,5 +32,6 @@ int main(int argc, char *argv[])
 	if(!strcmp(argv[1], "bzero"))	test_bzero();
 	if(!strcmp(argv[1], "memcpy"))	test_memcpy();
 	if(!strcmp(argv[1], "toupper"))	test_toupper();
+	if(!strcmp(argv[1], "tolower"))	test_tolower();
 	return(0);
 }
