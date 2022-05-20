@@ -6,10 +6,10 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:16:40 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/13 17:38:50 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:23:13 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft_tests.h"
+#include "libtests.h"
 #include "libft.h"
 
 void test_isalpha()

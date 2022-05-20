@@ -6,10 +6,10 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:55:49 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/13 16:56:55 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:24:13 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft_tests.h"
+#include "libtests.h"
 #include "libft.h"
 
 void test_memset()

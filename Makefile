@@ -1,17 +1,17 @@
 CC=gcc
 NAME=a.out
 CFLAGS=-Wall -Wextra -Werror
-TESTS_OBJ=print_char_n_null.o test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_atoi.o
+TESTS_OBJ=print_char_n_null.o test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_atoi.o
 
 all: $(NAME)
 
-$(NAME): libft.a libft_tests.a
-	$(CC) main.c libft.a libft_tests.a -o $(NAME) $(CFLAGS)
+$(NAME): libft.a libtests.a
+	$(CC) main.c libft.a libtests.a -o $(NAME) $(CFLAGS)
 
-libft_tests.a: $(TESTS_OBJ)
+libtests.a: $(TESTS_OBJ)
 	@echo ">Creating Tests lib..."
 	ar -x libft.a
-	ar -crs libft_tests.a *.o
+	ar -crs libtests.a *.o
 	rm *.o
 
 #########################################################
@@ -44,6 +44,9 @@ test_bzero.o:		test_bzero.c
 test_memcpy.o:		test_memcpy.c
 	$(CC) -c test_memcpy.c 	-o test_memcpy.o
 
+test_toupper.o:		test_toupper.c
+	$(CC) -c test_toupper.c -o test_toupper.o
+
 test_atoi.o: 		test_atoi.c
 	$(CC) -c test_atoi.c	-o test_atoi.o
 
@@ -57,4 +60,4 @@ clean:
 	rm -f *.o main.o
 
 fclean:
-	rm -f *.o a.out libft_tests.a
+	rm -f *.o a.out libtests.a

@@ -6,10 +6,10 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:34:11 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/13 17:36:00 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:23:28 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft_tests.h"
+#include "libtests.h"
 #include "libft.h"
 
 void	test_isdigit()

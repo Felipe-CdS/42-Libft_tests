@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_isprint.c                                     :+:      :+:    :+:   */
+/*   libtests.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 17:21:47 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/20 13:23:39 by fcoutinh         ###   ########.fr       */
+/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
+/*   Updated: 2022/05/20 13:43:05 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libtests.h"
+#include <unistd.h>
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "libft.h"
 
-void test_isprint()
-{
-	printf("\n> ft_isprint() tests: \n");
-	for(int i = -5; i < 130; i++) printf("%d", isprint(i));
-	printf("\n");
-	for(int i = -5; i < 130; i++) printf("%d", ft_isprint(i));
-	printf("\n\n");
-	printf("####################################################\n");
-}
+void	test_isalpha();
+void	test_isdigit();
+void	test_isalnum();
+void	test_isascii();
+void	test_isprint();
+void	test_strlen();
+void	test_memset();
+void	test_bzero();
+void	test_memcpy(); 
+void	test_toupper();
+void	test_atoi();
+
+void	print_char_n_null();

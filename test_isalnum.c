@@ -6,10 +6,10 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:19:34 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/13 17:28:28 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/20 13:22:51 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft_tests.h"
+#include "libtests.h"
 #include "libft.h"
 
 void test_isalnum()
