@@ -12,12 +12,18 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_isprint()
+int test_isprint()
 {
-	printf("\n> ft_isprint() tests: \n");
-	for(int i = -5; i < 130; i++) printf("%d", isprint(i));
-	printf("\n");
-	for(int i = -5; i < 130; i++) printf("%d", ft_isprint(i));
-	printf("\n\n");
-	printf("####################################################\n");
+	int i;
+	int real_return;
+	int test_return;
+
+	for(i = -5; i < 130; ++i){
+		if(isprint(i)) real_return = 1;
+		else real_return = 0;
+		if(ft_isprint(i)) test_return = 1;
+		else test_return = 0;
+		if(test_return ^ real_return) return (i); //XOR operator
+	};
+	return (0);
 }

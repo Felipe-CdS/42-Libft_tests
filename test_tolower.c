@@ -13,14 +13,8 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_tolower()
+int test_tolower()
 {
-	char x[10];
-	printf("\n ft_tolower() tests: \n");
-	for(int i = 32; i < 128; ++i) printf("%c", i); 
-	printf(" \n");
-	for(int i = 32; i < 128; ++i) printf("%c", tolower(i));
-	printf("\n");
-	for(int i = 32; i < 128; ++i) printf("%c", ft_tolower(i));
-	printf("\n");
+	for(int i = 0; i < 130; ++i) if(tolower(i) != ft_tolower(i)) return (i);
+	return (0);
 }

@@ -12,25 +12,18 @@
 #include "libtests.h"
 #include "libft.h"
 
-void	test_bzero()
+int	test_bzero()
 {
-	char	or[15]	= "Hello World...";
-	char	ft[15]	= "Hello World...";
+	char *entry, real_return[15], test_return[15];
 
-	write(1, "\n>or_bzero()\tbefore: ", 22);
-	print_char_n_null(or, sizeof(or));
+	entry = "Hello World...";
+	strcpy(real_return, entry);
+	strcpy(test_return, entry);	
 
-	bzero(or, 10);
+	bzero(real_return, 10);
+	ft_bzero(test_return ,10);
 
-	write(1, " | After: ", 11);
-	print_char_n_null(or, sizeof(or));
+	if(strcmp(real_return, test_return)) return (1);
 
-	write(1, "\n>ft_bzero()\tbefore: ", 22);
-	print_char_n_null(ft, sizeof(ft));
-
-	ft_bzero(ft, 10);
-
-	write(1, " | After: ", 11);
-	print_char_n_null(ft, sizeof(ft));
-	write(1, "\n", 1);
+	return (0);
 }

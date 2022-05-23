@@ -12,26 +12,16 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_memset()
+int test_memset()
 {
-	char	or[15]	= "Hello World...";
-	char	ft[15]	= "Hello World...";
+	const int	size = 10;
+	char		real_return[15] = "Hello World...";
+	char		test_return[15] = "Hello World...";
 
-	write(1, "\nor_memset()\tbefore: ", 22);
-	print_char_n_null(or, sizeof(or));
+	memset(real_return, 'A', size);
+	ft_memset(test_return, 'A' ,size);
 
-	memset(or, 'A' ,10);
+	if(strcmp(real_return, test_return)) return (1);
 
-	write(1, " | After: ", 11);
-	print_char_n_null(or, sizeof(or));
-	write(1, "\n", 1);
-
-	write(1, "ft_memset()\tbefore: ", 21);
-	print_char_n_null(ft, sizeof(ft));
-
-	ft_memset(ft, 'A', 10);
-
-	write(1, " | After: ", 11);
-	print_char_n_null(ft, sizeof(ft));
-	write(1, "\n", 1);
+	return (0);
 }

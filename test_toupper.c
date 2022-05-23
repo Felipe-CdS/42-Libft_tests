@@ -13,14 +13,8 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_toupper()
+int test_toupper()
 {
-	char x[10];
-	printf("\n ft_toupper() tests: \n");
-	for(int i = 32; i < 128; ++i) printf("%c", i); 
-	printf(" \n");
-	for(int i = 32; i < 128; ++i) printf("%c", toupper(i));
-	printf("\n");
-	for(int i = 32; i < 128; ++i) printf("%c", ft_toupper(i));
-	printf("\n");
+	for(int i = 0; i < 130; ++i) if(toupper(i) != ft_toupper(i)) return (i);
+	return (0);
 }

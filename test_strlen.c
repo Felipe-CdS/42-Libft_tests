@@ -12,26 +12,28 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_strlen()
+int test_strlen()
 {
+	char *entry;
+	char not_print_test[100] = {'1', 'a', '\2', '\1', '\0'};
 	char null_test[100];
-	char x[100] = {'1', 'a', '\2', '\1', '\0'};
 
-	printf("\n> ft_strlen() tests: \n");
-	printf("strlen(\"abcde12345\")		return > %zu\n", 	strlen("abcde12345"));
-	printf("strlen(\"a b c 1 2 3\")		return > %zu\n",	strlen("a b c 1 2 3"));
-	printf("strlen(\"* - + ! | @\")		return > %zu\n",	strlen("* - + ! | @"));
-	printf("strlen(\"1a\\2\\1\")		return > %zu\n",			strlen(x));
-	printf("strlen(\"\")			return > %zu\n",			strlen(""));
-	printf("strlen(NULL)			return > %zu\n",			strlen(null_test));
-	printf("\n");
+	entry = "abcde12345";
+	if(strlen(entry) != ft_strlen(entry)) return (1);
 
-	printf("ft_strlen(\"abcde12345\")		return > %zu\n",	ft_strlen("abcde12345"));
-	printf("ft_strlen(\"a b c 1 2 3\")	return > %zu\n",	ft_strlen("a b c 1 2 3"));
-	printf("ft_strlen(\"* - + ! | @\")	return > %zu\n",	ft_strlen("* - + ! | @"));
-	printf("ft_strlen(\"1a\\2\\1\")		return > %zu\n",			strlen(x));
-	printf("ft_strlen(\"\")			return > %zu\n",				ft_strlen(""));
-	printf("ft_strlen(NULL)			return > %zu\n",				ft_strlen(null_test));
-	printf("\n");
-	printf("####################################################\n");
+	entry = "a b c 1 2 3";
+	if(strlen(entry) != ft_strlen(entry)) return (2);
+
+	entry = "* - + ! | @";
+	if(strlen(entry) != ft_strlen(entry)) return (3);
+
+	entry = "";
+	if(strlen(entry) != ft_strlen(entry)) return (4);
+
+	//Special Cases:
+	if(strlen(not_print_test)	!= ft_strlen(not_print_test)) 	return (5);
+	if(strlen(null_test)		!= ft_strlen(null_test)) 		return (6);
+	
+	return (0);
 }
+

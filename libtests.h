@@ -16,17 +16,19 @@
 #include <string.h>
 #include "libft.h"
 
-void	test_isalpha();
-void	test_isdigit();
-void	test_isalnum();
-void	test_isascii();
-void	test_isprint();
-void	test_strlen();
-void	test_memset();
-void	test_bzero();
-void	test_memcpy(); 
-void	test_toupper();
-void	test_tolower();
+int		test_isalpha();
+int		test_isdigit();
+int		test_isalnum();
+int		test_isascii();
+int		test_isprint();
+int		test_strlen();
+int		test_memset();
+int		test_bzero();
+int		test_memcpy(); 
+int		test_toupper();
+int		test_tolower();
 void	test_atoi();
 
 void	print_char_n_null();
+void	test_single();
+void	test_all();

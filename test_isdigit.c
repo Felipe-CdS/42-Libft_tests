@@ -12,19 +12,18 @@
 #include "libtests.h"
 #include "libft.h"
 
-void	test_isdigit()
+int	test_isdigit()
 {
-	printf("\n> ft_isdigit() tests: \n");
-	printf("isdigit(1)	return > %d\n",	isdigit(1));
-	printf("isdigit('1')	return > %d\n",	isdigit('1'));
-	printf("isdigit('a')	return > %d\n",	isdigit('a'));
+	int i;
+	int real_return;
+	int test_return;
 
-	printf("\n");
-
-	printf("ft_isdigit(1)	return > %d\n",	ft_isdigit(1));
-	printf("ft_isdigit('1')	return > %d\n",	ft_isdigit('1'));
-	printf("ft_isdigit('a')	return > %d\n",	ft_isdigit('a'));
-
-	printf("\n");
-	printf("####################################################\n");
+	for(i = 0; i < 128; ++i){
+		if(isdigit(i)) real_return = 1;
+		else real_return = 0;
+		if(ft_isdigit(i)) test_return = 1;
+		else test_return = 0;
+		if(test_return ^ real_return) return (i); //XOR operator
+	};
+	return (0);
 }

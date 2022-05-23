@@ -12,16 +12,18 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_isalpha()
+int test_isalpha()
 {
-	printf("\n ft_isalpha() tests: \n");
-	for(int i = 0; i < 32; ++i) printf(" "); 
-	for(int i = 32; i < 128; ++i) printf("%c", i); 
+	int i;
+	int real_return;
+	int test_return;
 
-	printf(" \n");
-	for(int i = 0; i < 128; ++i) printf("%d", isalpha(i));
-	printf("\n");
-	for(int i = 0; i < 128; ++i) printf("%d", ft_isalpha(i));
-	printf("\n\n");
-	printf("####################################################\n");
+	for(i = 0; i < 128; ++i){
+		if(isalpha(i)) real_return = 1;
+		else real_return = 0;
+		if(ft_isalpha(i)) test_return = 1;
+		else test_return = 0;
+		if(test_return ^ real_return) return (i); //XOR operator
+	};
+	return (0);
 }

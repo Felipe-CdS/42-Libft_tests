@@ -1,14 +1,15 @@
 CC=gcc
 NAME=a.out
 CFLAGS=-Wall -Wextra -Werror
-TESTS_OBJ=print_char_n_null.o test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_tolower.o test_atoi.o
+TESTS_UTILS=test_single.o test_all.o
+TESTS_OBJ=test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_tolower.o test_atoi.o
 
 all: $(NAME)
 
 $(NAME): libft.a libtests.a
 	$(CC) main.c libft.a libtests.a -o $(NAME) $(CFLAGS)
 
-libtests.a: $(TESTS_OBJ)
+libtests.a: $(TESTS_OBJ) $(TESTS_UTILS)
 	@echo ">Creating Tests lib..."
 	ar -x libft.a
 	ar -crs libtests.a *.o
@@ -53,8 +54,13 @@ test_tolower.o:		test_tolower.c
 test_atoi.o: 		test_atoi.c
 	$(CC) -c test_atoi.c	-o test_atoi.o
 
-print_char_n_null.o: 	print_char_n_null.c
-	$(CC) -c print_char_n_null.c -o print_char_n_null.o
+#########################################################
+## Test Utils
+test_single.o:				test_single.c
+	$(CC) -c test_single.c -o test_single.o
+
+test_all.o:				test_all.c
+	$(CC) -c test_all.c -o test_all.o
 
 .PHONY:
 	all clean fclean re

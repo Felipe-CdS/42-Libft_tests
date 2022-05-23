@@ -12,12 +12,19 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_isascii()
+int test_isascii()
 {
-	printf("\n> ft_isascii() tests: \n");
-	for(int i = -5; i < 130; i++) printf("%d", isascii(i));
-	printf("\n");
-	for(int i = -5; i < 130; i++) printf("%d", ft_isascii(i));
-	printf("\n\n");
-	printf("####################################################\n");
+	int i;
+	int real_return;
+	int test_return;
+
+	for(i = 0; i < 128; ++i){
+		if(isascii(i)) real_return = 1;
+		else real_return = 0;
+		if(ft_isascii(i)) test_return = 1;
+		else test_return = 0;
+		if(test_return ^ real_return) return (i); //XOR operator
+	};
+	return (0);
 }
+

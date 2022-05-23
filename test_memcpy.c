@@ -12,26 +12,17 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_memcpy()
+int test_memcpy()
 {
 	const int	size = 10;
-	char		or_src[15] = "Hello World...", or_dst[20] = "";
-	char		ft_src[15] = "Hello World...", ft_dst[20] = "";
+	char 		*src = "Hello World...";
+	char		real_return[15] = "";
+	char		test_return[15] = "";
 
-	write(1, "\n>or_memcpy()\tbefore: ", 23);
-	print_char_n_null(or_dst, sizeof(or_dst));
+	memcpy(real_return, src, size);
+	ft_memcpy(test_return, src, size);
 
-	memcpy(or_dst, or_src, size);
+	if(strcmp(real_return, test_return)) return (1);
 
-	write(1, " | After: ", 11);
-	print_char_n_null(or_dst, sizeof(or_dst));
-
-	write(1, "\n>ft_memcpy()\tbefore: ", 23);
-	print_char_n_null(ft_dst, sizeof(ft_dst));
-
-	ft_memcpy(ft_dst, ft_src, size);
-
-	write(1, " | After: ", 11);
-	print_char_n_null(ft_dst, sizeof(ft_dst));
-	write(1, "\n", 1);
+	return (0);
 }

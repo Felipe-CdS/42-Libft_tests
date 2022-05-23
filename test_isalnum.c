@@ -12,20 +12,20 @@
 #include "libtests.h"
 #include "libft.h"
 
-void test_isalnum()
+int test_isalnum()
 {
-	printf("\n> isalnum() tests\n");
-	for(int i = -5;  i < 32;  ++i) printf(" "); 
-	for(int i = 32;  i < 128; ++i) printf("%c", i); 
-	for(int i = 128; i < 130; ++i) printf(" "); 
+	int i;
+	int real_return;
+	int test_return;
 
-
-	printf(" \n");
-	for(int i = -5; i < 130; ++i) printf("%d", isalnum(i));
-	printf("\n");
-	for(int i = -5; i < 130; ++i) printf("%d", ft_isalnum(i));
-	printf("\n\n");
-	printf("####################################################\n");
+	for(i = 0; i < 128; ++i){
+		if(isalnum(i)) real_return = 1;
+		else real_return = 0;
+		if(ft_isalnum(i)) test_return = 1;
+		else test_return = 0;
+		if(test_return ^ real_return) return (i); //XOR operator
+	};
+	return (0);
 }
 
 
