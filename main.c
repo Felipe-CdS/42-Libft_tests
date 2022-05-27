@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:27:50 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 10:33:06 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 12:53:30 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -38,6 +38,7 @@ int main(int argc, char *argv[])
 		else if(!strcmp(argv[1], "tolower"))	test_single(&test_tolower);
 		else if(!strcmp(argv[1], "strchr"))	test_single(&test_strchr);
 		else if(!strcmp(argv[1], "strrchr"))	test_single(&test_strrchr);
+		else if(!strcmp(argv[1], "strncmp"))	test_single(&test_strncmp);
 	}
 	return (0);
 }

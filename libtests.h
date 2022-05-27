@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 10:32:27 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 12:52:56 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -29,6 +29,7 @@ int	test_toupper();
 int	test_tolower();
 int	test_strchr();
 int	test_strrchr();
+int	test_strncmp();
 void	test_atoi();
 
 void	print_char_n_null();
