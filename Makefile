@@ -2,7 +2,7 @@ CC=gcc
 NAME=a.out
 CFLAGS=-Wall -Wextra -Werror
 TESTS_UTILS=test_single.o test_all.o
-TESTS_OBJ=test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_tolower.o test_strchr.o test_strrchr.o test_strncmp.o test_atoi.o
+TESTS_OBJ=test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_tolower.o test_strchr.o test_strrchr.o test_strncmp.o test_memchr.o test_atoi.o
 
 all: $(NAME)
 
@@ -60,6 +60,9 @@ test_strrchr.o:		test_strrchr.c
 test_strncmp.o:		test_strncmp.c
 	$(CC) -c test_strncmp.c -o test_strncmp.o
 
+test_memchr.o:		test_memchr.c
+	$(CC) -c test_memchr.c -o test_memchr.o
+
 test_atoi.o: 		test_atoi.c
 	$(CC) -c test_atoi.c	-o test_atoi.o
 
@@ -75,7 +78,7 @@ test_all.o:				test_all.c
 	all clean fclean re
 
 clean:
-	rm -f *.o main.o
+	rm -f *.o  a.out
 
 fclean:
 	rm -f *.o a.out libtests.a
