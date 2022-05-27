@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:27:50 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 15:21:48 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:19:25 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -40,6 +40,7 @@ int main(int argc, char *argv[])
 		else if(!strcmp(argv[1], "strrchr"))	test_single(&test_strrchr);
 		else if(!strcmp(argv[1], "strncmp"))	test_single(&test_strncmp);
 		else if(!strcmp(argv[1], "memchr"))	test_single(&test_memchr);
+		else if(!strcmp(argv[1], "memcmp"))	test_single(&test_memcmp);
 	}
 	return (0);
 }

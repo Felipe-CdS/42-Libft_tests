@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 15:18:46 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 16:19:59 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -31,6 +31,7 @@ int	test_strchr();
 int	test_strrchr();
 int	test_strncmp();
 int	test_memchr();
+int	test_memcmp();
 void	test_atoi();
 
 void	print_char_n_null();
