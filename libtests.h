@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/20 17:56:15 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 09:43:15 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -16,17 +16,18 @@
 #include <string.h>
 #include "libft.h"
 
-int		test_isalpha();
-int		test_isdigit();
-int		test_isalnum();
-int		test_isascii();
-int		test_isprint();
-int		test_strlen();
-int		test_memset();
-int		test_bzero();
-int		test_memcpy(); 
-int		test_toupper();
-int		test_tolower();
+int	test_isalpha();
+int	test_isdigit();
+int	test_isalnum();
+int	test_isascii();
+int	test_isprint();
+int	test_strlen();
+int	test_memset();
+int	test_bzero();
+int	test_memcpy(); 
+int	test_toupper();
+int	test_tolower();
+int	test_strchr();
 void	test_atoi();
 
 void	print_char_n_null();
