@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:27:50 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 09:54:15 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 10:33:06 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -20,7 +20,6 @@
 int main(int argc, char *argv[])
 {
 	char entry[50];
-
 	(void) argc;
 	if(!argv[1]) test_all();
 	else
@@ -38,7 +37,7 @@ int main(int argc, char *argv[])
 		else if(!strcmp(argv[1], "toupper"))	test_single(&test_toupper);
 		else if(!strcmp(argv[1], "tolower"))	test_single(&test_tolower);
 		else if(!strcmp(argv[1], "strchr"))	test_single(&test_strchr);
-
+		else if(!strcmp(argv[1], "strrchr"))	test_single(&test_strrchr);
 	}
 	return (0);
 }

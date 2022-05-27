@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 09:51:28 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/27 10:34:35 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -53,6 +53,9 @@ void	test_all()
 
 	printf("> Test 12) ft_strchr:\t");
 	test_single(&test_strchr);
+
+	printf("> Test 13) ft_strrchr:\t");
+	test_single(&test_strrchr);
 
 	printf("\n============================================\n");
 }
