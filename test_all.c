@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/30 19:25:44 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/01 09:06:20 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -85,6 +85,11 @@ void	test_all()
 	printf("|\t\t> Test 17) ft_strnstr:\t");
 	test_single(&test_strnstr);
 	printf("\t\t|\n");
+
+	printf("|\t\t> Test 18) ft_atoi:\t");
+	test_single(&test_atoi);
+	printf("\t\t|\n");
+
 
 
 	printf("+-------------------------------------------------------+\n");
