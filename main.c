@@ -6,12 +6,13 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:27:50 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 16:19:25 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:37:47 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
 #include <unistd.h>
 #include <strings.h>
+#include <string.h>
 #include <ctype.h>
 #include <stdlib.h>
 #include "libft.h"
@@ -41,6 +42,7 @@ int main(int argc, char *argv[])
 		else if(!strcmp(argv[1], "strncmp"))	test_single(&test_strncmp);
 		else if(!strcmp(argv[1], "memchr"))	test_single(&test_memchr);
 		else if(!strcmp(argv[1], "memcmp"))	test_single(&test_memcmp);
+		else if(!strcmp(argv[1], "strnstr"))	test_single(&test_strnstr);
 	}
 	return (0);
 }

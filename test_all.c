@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 16:18:37 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/05/30 19:25:44 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -81,6 +81,11 @@ void	test_all()
 	printf("|\t\t> Test 16) ft_memcmp:\t");
 	test_single(&test_memcmp);
 	printf("\t\t|\n");
+
+	printf("|\t\t> Test 17) ft_strnstr:\t");
+	test_single(&test_strnstr);
+	printf("\t\t|\n");
+
 
 	printf("+-------------------------------------------------------+\n");
 }
