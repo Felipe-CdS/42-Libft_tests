@@ -12,7 +12,7 @@ $(NAME): libft.a libtests.a
 libtests.a: $(TESTS_OBJ) $(TESTS_UTILS)
 	@echo ">Creating Tests lib..."
 	ar -x libft.a
-	ar -crs libtests.a *.o
+	ar -crs libtests.a $(TESTS_OBJ) $(TESTS_UTILS)
 	rm *.o
 
 #########################################################
@@ -86,4 +86,4 @@ clean:
 	rm -f *.o  a.out
 
 fclean:
-	rm -f *.o a.out libtests.a
+	rm -f *.o __.* a.out libtests.a libft.a
