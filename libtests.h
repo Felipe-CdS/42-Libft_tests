@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/01 09:34:36 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:44:58 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -26,6 +26,7 @@ int	test_memset();
 int	test_bzero();
 int	test_memcpy(); 
 int	test_strlcpy();
+int test_strlcat();
 int	test_toupper();
 int	test_tolower();
 int	test_strchr();

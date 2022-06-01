@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:27:50 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/01 09:36:54 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:52:11 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
 		else if(!strcmp(argv[1], "strnstr"))	test_single(&test_strnstr);
 		else if(!strcmp(argv[1], "atoi"))		test_single(&test_atoi);
 		else if(!strcmp(argv[1], "strlcpy"))	test_single(&test_strlcpy);
+		else if(!strcmp(argv[1], "strlcat"))	test_single(&test_strlcat);
 	}
 	return (0);
 }

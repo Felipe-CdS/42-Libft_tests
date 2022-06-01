@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/01 09:37:48 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/01 12:44:42 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -92,6 +92,10 @@ void	test_all()
 
 	printf("|\t\t> Test 19) ft_strlcpy:\t");
 	test_single(&test_strlcpy);
+	printf("\t\t|\n");
+
+	printf("|\t\t> Test 20) ft_strlcat:\t");
+	test_single(&test_strlcat);
 	printf("\t\t|\n");
 
 	printf("+-------------------------------------------------------+\n");
