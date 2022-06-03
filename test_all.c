@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/01 12:44:42 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/03 15:07:50 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -98,6 +98,23 @@ void	test_all()
 	test_single(&test_strlcat);
 	printf("\t\t|\n");
 
+	printf("|\t\t> Test 21) ft_memmove:\t");
+	test_single(&test_memmove);
+	printf("\t\t|\n");
+
+	printf("|\t\t> Test 22) ft_calloc:\t");
+	test_single(&test_calloc);
+	printf("\t\t|\n");
+
+	printf("+-------------------------------------------------------+\n");
+	
+	printf("|\t\t> Test 23) ft_substr:\t");
+	test_single(&test_substr);
+	printf("\t\t|\n");
+	
+	printf("|\t\t> Test 24) ft_strjoin:\t");
+	test_single(&test_strjoin);
+	printf("\t\t|\n");
+
 	printf("+-------------------------------------------------------+\n");
 }
-
