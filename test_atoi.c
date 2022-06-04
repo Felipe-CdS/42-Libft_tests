@@ -15,9 +15,6 @@
 int	test_atoi()
 {
 	char *entry;
-	char not_print_test[100] = {'1', 'a', '\2', '\1', '\0'};
-	char null_test[100];
-
 	// Basic positive entry
 	entry = "12345";
 	if(atoi(entry) != ft_atoi(entry)) 		return (1);

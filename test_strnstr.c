@@ -16,8 +16,6 @@ int	test_strnstr(){
 
 	char	*haystack;
 	char	*needle;
-	char	sp_c1[100] = {'1', 'a', '\2', '\1', '\0'};
-	char	sp_c2[100];
 
 	// Successful find at start of string
 	haystack	= "Hello World";

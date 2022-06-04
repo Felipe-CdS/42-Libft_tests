@@ -14,20 +14,20 @@
 
 int	test_calloc()
 {
-	int 	i;
-	char *buffer;
+	// int 	i;
+	// char *buffer;
 
-	i = 0;
-	buffer = (char *) ft_calloc(10, sizeof(char));
-	if(!buffer) printf("Null buffer");
+	// i = 0;
+	// buffer = (char *) ft_calloc(10, sizeof(char));
+	// if(!buffer) printf("Null buffer");
 
-	/*
-	while(i < 10)
-	{
-		printf("%d\n", buffer[i]);
-		i++;
-	}
-	*/
-	free(buffer);
+	// /*
+	// while(i < 10)
+	// {
+	// 	printf("%d\n", buffer[i]);
+	// 	i++;
+	// }
+	// */
+	// free(buffer);
 	return (0);
 }
