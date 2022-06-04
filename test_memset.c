@@ -12,8 +12,9 @@
 #include "libtests.h"
 #include "libft.h"
 
-int test_memset()
-{
+#define TESTS_QUANT 1
+
+static int	test_1(){
 	const int	size = 10;
 	char		real_return[15] = "Hello World...";
 	char		test_return[15] = "Hello World...";
@@ -21,7 +22,12 @@ int test_memset()
 	memset(real_return, 'A', size);
 	ft_memset(test_return, 'A' ,size);
 
-	if(strcmp(real_return, test_return)) return (1);
+	if(strcmp(real_return, test_return) != 0) return (KO);
 
-	return (0);
+	return (OK);
+}
+
+void		test_memset(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1};
+	tests_iterator(f_ptr, TESTS_QUANT);
 }

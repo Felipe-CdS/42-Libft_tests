@@ -12,8 +12,9 @@
 #include "libtests.h"
 #include "libft.h"
 
-int	test_bzero()
-{
+#define TESTS_QUANT 2
+
+static int	test_1(){
 	char *entry, real_return[15], test_return[15];
 
 	entry = "Hello World...";
@@ -23,7 +24,16 @@ int	test_bzero()
 	bzero(real_return, 10);
 	ft_bzero(test_return ,10);
 
-	if(strcmp(real_return, test_return)) return (1);
+	if(strcmp(real_return, test_return) != 0) return (KO);
 
-	return (0);
+	return (OK);
+}
+
+static int	test_2(){
+	return (ND);
+}
+
+void		test_bzero(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2};
+	tests_iterator(f_ptr, TESTS_QUANT);
 }

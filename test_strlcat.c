@@ -14,6 +14,9 @@
 
 #define TESTS_QUANT 5
 
+#define DST_ERROR ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) != 0
+#define RET_ERROR real_ret != test_ret
+
 // 1) Basic test
 static int test_1(){
 	char		*src, real_dst[100], test_dst[100];
@@ -27,9 +30,9 @@ static int test_1(){
 	// >Test exec
 	real_ret = strlcat(real_dst, 		src,	buf_size);
 	test_ret = ft_strlcat(test_dst, 	src,	buf_size);
-	// printf("%zu %zu || %s |===| %s\t", real_ret, test_ret, real_dst, test_dst); // debug printf
-	if(ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) || real_ret != test_ret)	return (1);
-	return (0);
+	
+	if (DST_ERROR || RET_ERROR)	return (KO);
+	return (OK);
 }
 
 // 2) Truncate string
@@ -45,9 +48,8 @@ static int test_2(){
 	// >Test exec
 	real_ret = strlcat(real_dst, 		src,	buf_size);
 	test_ret = ft_strlcat(test_dst, 	src,	buf_size);
-	// printf("%zu %zu || %s |===| %s\t", real_ret, test_ret, real_dst, test_dst); // debug printf
-	if(ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) || real_ret != test_ret)	return (1);
-	return (0);
+	if (DST_ERROR || RET_ERROR)	return (KO);
+	return (OK);
 }
 
 // 3) Empty Entry
@@ -63,9 +65,8 @@ static int test_3(){
 	// >Test exec
 	real_ret = strlcat(real_dst, 		src,	buf_size);
 	test_ret = ft_strlcat(test_dst, 	src,	buf_size);
-	// printf("%zu %zu || %s |===| %s\t", real_ret, test_ret, real_dst, test_dst); // debug printf
-	if(ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) || real_ret != test_ret)	return (1);
-	return (0);
+	if (DST_ERROR || RET_ERROR)	return (KO);
+	return (OK);
 }
 
 // 4) len == 0
@@ -81,9 +82,8 @@ static int test_4(){
 	// >Test exec
 	real_ret = strlcat(real_dst, 		src,	buf_size);
 	test_ret = ft_strlcat(test_dst, 	src,	buf_size);
-	// printf("%zu %zu || %s|===| %s", real_ret, test_ret, real_dst, test_dst); // debug printf
-	if(ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) || real_ret != test_ret)	return (1);
-	return (0);
+	if (DST_ERROR || RET_ERROR)	return (KO);
+	return (OK);
 }
 
 // 5) src too big
@@ -99,20 +99,11 @@ static int test_5(){
 	// >Test exec
 	real_ret = strlcat(real_dst, 		src,	buf_size);
 	test_ret = ft_strlcat(test_dst, 	src,	buf_size);
-	// printf("%zu %zu || %s|===| %s", real_ret, test_ret, real_dst, test_dst); // debug printf
-	if(ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) || real_ret != test_ret)	return (1);
-	return (0);
+	if (DST_ERROR || RET_ERROR)	return (KO);
+	return (OK);
 }
 
-int	test_strlcat(){
-	int (*f_ptr[TESTS_QUANT])() = {&test_1, &test_2, &test_3, &test_4, &test_5};
-	
-	for(int i = 0; i < TESTS_QUANT; i++)
-	{
-		if((f_ptr[(i)])() == 1) 		printf(RED "[KO]" RESET);
-		else if((f_ptr[(i)])() == 0) 	printf(GRN "[OK]" RESET);	
-		else							printf(YEL "[NI]" RESET);	
-	} 
-
-	return (0);
+void	test_strlcat(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5};
+	tests_iterator(f_ptr, TESTS_QUANT);
 }

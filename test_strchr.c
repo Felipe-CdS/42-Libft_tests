@@ -12,52 +12,67 @@
 #include "libft.h"
 #include "libtests.h"
 
-int	test_strchr()
-{
-	char	*entry;
-	char	search;
-	char	sp_c1[100] = {'1', 'a', '\2', '\1', '\0'};
-	char	sp_c2[100];
+#define TESTS_QUANT 7
 
-	// Char at first index
-	entry	= "abcde12345";
-	search	= 'a';
-	if(strchr(entry, search) != ft_strchr(entry, search))	return (1);
+#define CHECK_COND strchr(entry, search) != ft_strchr(entry, search)
 
-	// Char at random index
-	entry	= "abcde12345";
-	search	= '2';
-	if(strchr(entry, search) != ft_strchr(entry, search))	return (2);
+// Char at first index
+static int	test_1(){		
+	char	*entry = "abcde12345";
+	char	search = 'a';
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
 
-	// Char at last index
-	entry	= "abcde12345";
-	search	= '5';
-	if(strchr(entry, search) != ft_strchr(entry, search))	return (3);
+// Char at random index
+static int	test_2(){		
+	char	*entry = "abcde12345";
+	char	search = '2';
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
 
-	// Char is a space
-	entry	= "a b c 1 2 3";
-	search	= ' ';
-	if(strchr(entry, search) != ft_strchr(entry, search))	return (4);
+// Char at last index
+static int	test_3(){		
+	char	*entry = "abcde12345";
+	char	search = '5';
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
 
-	// Char is a non printable digit
-	//sp_c1 = {'1', 'a', '\2', '\1', '\0'};
-	search	= 1;
-	if(strchr(sp_c1, search) != ft_strchr(sp_c1, search))	return (5);
+// Char is a space
+static int	test_4(){		
+	char	*entry = "a b c 1 2 3";
+	char	search = ' ';
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
 
-	// Char isn't at src
-	entry	= "* - + ! | @";
-	search	= 'a'; 
-	if(strchr(entry, search) != ft_strchr(entry, search))	return (6);
+// Char is a space
+static int	test_5(){		
+	char	entry[100]	= {'1', 'a', '\2', '\1', '\0'};
+	char	search		= 1;
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
 
-	// Src is empty
-	entry	= "";
-	search	= 'a';
-	if(strchr(entry, search) != ft_strchr(entry, search))	return (7);
+// Char isn't at src
+static int	test_6(){		
+	char	*entry	= "* - + ! | @";
+	char	search	= 'a';
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
 
-	// Src is null
-	//char sp_c2[100];
-	search	= 'a';
-	if(strchr(sp_c2, search) != ft_strchr(sp_c2, search))	return (8);
-	
-	return (0);
+// Src is empty
+static int	test_7(){		
+	char	*entry	= "";
+	char	search	= 'a';
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
+
+void	test_strchr(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7};
+	tests_iterator(f_ptr, TESTS_QUANT);
 }

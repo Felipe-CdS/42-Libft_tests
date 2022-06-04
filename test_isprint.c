@@ -12,18 +12,25 @@
 #include "libtests.h"
 #include "libft.h"
 
-int test_isprint()
-{
+#define TESTS_QUANT 1
+
+static int	test_1(){
 	int i;
 	int real_return;
 	int test_return;
 
-	for(i = -5; i < 130; ++i){
+	for(i = 0; i < 128; ++i){
 		if(isprint(i)) real_return = 1;
 		else real_return = 0;
 		if(ft_isprint(i)) test_return = 1;
 		else test_return = 0;
-		if(test_return ^ real_return) return (i); //XOR operator
+		if(test_return ^ real_return) return (KO); //XOR operator
 	};
-	return (0);
+	
+	return (OK);
+}
+
+void		test_isprint(){	
+	t_func_array f_ptr[1] = { &test_1 };
+	tests_iterator(f_ptr, 1);
 }

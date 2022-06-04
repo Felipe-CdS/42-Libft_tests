@@ -12,8 +12,9 @@
 #include "libtests.h"
 #include "libft.h"
 
-int test_isascii()
-{
+#define TESTS_QUANT 1
+
+static int	test_1(){
 	int i;
 	int real_return;
 	int test_return;
@@ -23,8 +24,13 @@ int test_isascii()
 		else real_return = 0;
 		if(ft_isascii(i)) test_return = 1;
 		else test_return = 0;
-		if(test_return ^ real_return) return (i); //XOR operator
+		if(test_return ^ real_return) return (KO); //XOR operator
 	};
-	return (0);
+	
+	return (OK);
 }
 
+void		test_isascii(){	
+	t_func_array f_ptr[1] = { &test_1 };
+	tests_iterator(f_ptr, 1);
+}

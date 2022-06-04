@@ -12,22 +12,33 @@
 #include "libft.h"
 #include "libtests.h"
 
-int	test_calloc()
-{
-	// int 	i;
-	// char *buffer;
+#define TESTS_QUANT 1
 
-	// i = 0;
-	// buffer = (char *) ft_calloc(10, sizeof(char));
-	// if(!buffer) printf("Null buffer");
-
-	// /*
-	// while(i < 10)
-	// {
-	// 	printf("%d\n", buffer[i]);
-	// 	i++;
-	// }
-	// */
-	// free(buffer);
-	return (0);
+static int	test_1(){
+	return (ND);
 }
+
+void	test_calloc(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1};
+	tests_iterator(f_ptr, TESTS_QUANT);
+}
+
+// int	test_calloc()
+// {
+// 	// int 	i;
+// 	// char *buffer;
+
+// 	// i = 0;
+// 	// buffer = (char *) ft_calloc(10, sizeof(char));
+// 	// if(!buffer) printf("Null buffer");
+
+// 	// /*
+// 	// while(i < 10)
+// 	// {
+// 	// 	printf("%d\n", buffer[i]);
+// 	// 	i++;
+// 	// }
+// 	// */
+// 	// free(buffer);
+// 	return (0);
+// }

@@ -16,39 +16,46 @@
 #include <string.h>
 #include "libft.h"
 
+#define OK 1
+#define KO 0
+#define ND -1
+
 #define RED   "\x1B[31m"
 #define GRN   "\x1B[32m"
 #define YEL   "\x1B[33m"
 #define RESET "\x1B[0m"
 
-int	test_isalpha();
-int	test_isdigit();
-int	test_isalnum();
-int	test_isascii();
-int	test_isprint();
-int	test_strlen();
-int	test_memset();
-int	test_bzero();
-int	test_memcpy(); 
-int	test_memmove(); 
-int	test_strlcpy();
-int test_strlcat();
-int	test_toupper();
-int	test_tolower();
-int	test_strchr();
-int	test_strrchr();
-int	test_strncmp();
-int	test_memchr();
-int	test_memcmp();
-int	test_strnstr();
-int	test_atoi();
+typedef int (*t_func_array)(void);
 
-int test_calloc();
-int test_strdup();
+void	test_isalpha();
+void	test_isdigit();
+void	test_isalnum();
+void	test_isascii();
+void	test_isprint();
+void	test_strlen();
+void	test_memset();
+void	test_bzero();
+void	test_memcpy(); 
+void	test_memmove(); 
+void	test_strlcpy();
+void	test_strlcat();
+void	test_toupper();
+void	test_tolower();
+void	test_strchr();
+void	test_strrchr();
+void	test_strncmp();
+void	test_memchr();
+void	test_memcmp();
+void	test_strnstr();
+void	test_atoi();
 
-int 	test_substr();
-int		test_strjoin();
+void	test_calloc();
+void	test_strdup();
 
-void	print_char_n_null();
-void	test_single();
+// void	test_substr();
+// int		test_strjoin();
+
+// void	print_char_n_null();
+// void	test_single();
 void	test_all();
+void	tests_iterator(t_func_array *f_ptr, int tests_quant);

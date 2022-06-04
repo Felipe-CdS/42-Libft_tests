@@ -12,8 +12,7 @@
 #include "libtests.h"
 #include "libft.h"
 
-int test_isalpha()
-{
+static int	test_1(void){
 	int i;
 	int real_return;
 	int test_return;
@@ -23,7 +22,13 @@ int test_isalpha()
 		else real_return = 0;
 		if(ft_isalpha(i)) test_return = 1;
 		else test_return = 0;
-		if(test_return ^ real_return) return (i); //XOR operator
+		if(test_return ^ real_return) return (KO); //XOR operator
 	};
-	return (0);
+	
+	return (OK);
+}
+
+void	test_isalpha(){	
+	t_func_array f_ptr[1] = { &test_1 };
+	tests_iterator(f_ptr, 1);
 }

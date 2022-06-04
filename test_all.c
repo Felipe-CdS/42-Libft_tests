@@ -12,109 +12,103 @@
 #include "libft.h"
 #include "libtests.h"
 
+void	tests_iterator(t_func_array *f_ptr, int tests_quant)
+{
+	if(!tests_quant) printf(YEL "[FUNCTION OR TESTS NOT IMPLEMENTED YET]" RESET);
+	for(int i = 0; i < tests_quant; i++)
+	{
+		int ret = (*f_ptr[i])();
+		if(ret == KO) 		printf(RED "[KO]" RESET);
+		else if(ret == OK) 	printf(GRN "[OK]" RESET);	
+		else				printf(YEL "[ND]" RESET);
+	}
+	printf("\n");
+}
+
 void	test_all()
 {
-	printf("\n+-------------------------------------------------------+\n");
-	printf("|\t\t\tLibft Tests\t\t\t|\n");
-	printf("+-------------------------------------------------------+\n");
+	printf("+-----------------------------------------------------------------------+\n");
+	printf("|\t\t\t\tLibft Tests\t\t\t\t|\n");
+	printf("+-----------------------------------------------------------------------+\n");
 	
-	printf("|\t\t> Test 01) ft_isalpha:\t");
-	test_single(&test_isalpha);
-	printf("\t\t|\n");
+	printf("\t> Test 01) ft_isalpha:\t");
+	test_isalpha();
 
-	printf("|\t\t> Test 02) ft_isdigit:\t");
-	test_single(&test_isdigit);
-	printf("\t\t|\n");
+	printf("\t> Test 02) ft_isdigit:\t");
+	test_isdigit();
 
-	printf("|\t\t> Test 03) ft_isalnum:\t");
-	test_single(&test_isalnum);
-	printf("\t\t|\n");
+	printf("\t> Test 03) ft_isalnum:\t");
+	test_isalnum();
 
-	printf("|\t\t> Test 04) ft_isascii:\t");
-	test_single(&test_isascii);
-	printf("\t\t|\n");
+	printf("\t> Test 04) ft_isascii:\t");
+	test_isascii();
 
-	printf("|\t\t> Test 05) ft_isprint:\t");
-	test_single(&test_isprint);
-	printf("\t\t|\n");
+	printf("\t> Test 05) ft_isprint:\t");
+	test_isprint();
 
-	printf("|\t\t> Test 06) ft_strlen:\t");
-	test_single(&test_strlen);
-	printf("\t\t|\n");
+	printf("\t> Test 06) ft_strlen:\t");
+	test_strlen();
 
-	printf("|\t\t> Test 07) ft_memset:\t");
-	test_single(&test_memset);
-	printf("\t\t|\n");
+	printf("\t> Test 07) ft_memset:\t");
+	test_memset();
 
-	printf("|\t\t> Test 08) ft_bzero:\t");
-	test_single(&test_bzero);
-	printf("\t\t|\n");
+	printf("\t> Test 08) ft_bzero:\t");
+	test_bzero();
 
-	printf("|\t\t> Test 09) ft_memcpy:\t");
-	test_single(&test_memcpy);
-	printf("\t\t|\n");
+	printf("\t> Test 09) ft_memcpy:\t");
+	test_memcpy();
 
-	printf("|\t\t> Test 10) ft_toupper:\t");
-	test_single(&test_toupper);
-	printf("\t\t|\n");
+	printf("\t> Test 10) ft_memmove:\t");
+	test_memmove();
 
-	printf("|\t\t> Test 11) ft_tolower:\t");
-	test_single(&test_tolower);
-	printf("\t\t|\n");
+	printf("\t> Test 11) ft_strlcpy:\t");
+	test_strlcpy();
 
-	printf("|\t\t> Test 12) ft_strchr:\t");
-	test_single(&test_strchr);
-	printf("\t\t|\n");
+	printf("\t> Test 12) ft_strlcat:\t");
+	test_strlcat();
 
-	printf("|\t\t> Test 13) ft_strrchr:\t");
-	test_single(&test_strrchr);
-	printf("\t\t|\n");
+	printf("\t> Test 13) ft_toupper:\t");
+	test_toupper();
 
-	printf("|\t\t> Test 14) ft_strncmp:\t");
-	test_single(&test_strncmp);
-	printf("\t\t|\n");
+	printf("\t> Test 14) ft_tolower:\t");
+	test_tolower();
 
-	printf("|\t\t> Test 15) ft_memchr:\t");
-	test_single(&test_memchr);
-	printf("\t\t|\n");
+	printf("\t> Test 15) ft_strchr:\t");
+	test_strchr();
 
-	printf("|\t\t> Test 16) ft_memcmp:\t");
-	test_single(&test_memcmp);
-	printf("\t\t|\n");
+	printf("\t> Test 16) ft_strrchr:\t");
+	test_strrchr();
 
-	printf("|\t\t> Test 17) ft_strnstr:\t");
-	test_single(&test_strnstr);
-	printf("\t\t|\n");
+	printf("\t> Test 17) ft_strncmp:\t");
+	test_strncmp();
 
-	printf("|\t\t> Test 18) ft_atoi:\t");
-	test_single(&test_atoi);
-	printf("\t\t|\n");
+	printf("\t> Test 18) ft_memchr:\t");
+	test_memchr();
 
-	printf("|\t\t> Test 19) ft_strlcpy:\t");
-	test_single(&test_strlcpy);
-	printf("\t\t|\n");
+	printf("\t> Test 19) ft_memcmp:\t");
+	test_memcmp();
 
-	printf("|\t\t> Test 20) ft_strlcat:\t");
-	test_single(&test_strlcat);
-	printf("\t\t|\n");
+	printf("\t> Test 20) ft_strnstr:\t");
+	test_strnstr();
 
-	printf("|\t\t> Test 21) ft_memmove:\t");
-	test_single(&test_memmove);
-	printf("\t\t|\n");
+	printf("\t> Test 21) ft_atoi:\t");
+	test_atoi();
 
-	printf("|\t\t> Test 22) ft_calloc:\t");
-	test_single(&test_calloc);
-	printf("\t\t|\n");
+	printf("\t> Test 22) ft_calloc:\t");
+	test_calloc();
 
-	printf("+-------------------------------------------------------+\n");
+	printf("\t> Test 23) ft_strdup:\t");
+	test_strdup();
+
+	printf("+-----------------------------------------------------------------------+\n");
 	
-	printf("|\t\t> Test 23) ft_substr:\t");
-	test_single(&test_substr);
-	printf("\t\t|\n");
+	// printf("|\t> Test 23) ft_substr:\t");
+	// test_single(&test_substr);
+	// printf("\t\t\t\t|\n");
 	
-	printf("|\t\t> Test 24) ft_strjoin:\t");
-	test_single(&test_strjoin);
-	printf("\t\t|\n");
-
-	printf("+-------------------------------------------------------+\n");
+	// printf("|\t> Test 24) ft_strjoin:\t");
+	// test_single(&test_strjoin);
+	// printf("\t\t\t\t|\n");
+	
+	// printf("+-----------------------------------------------------------------------+\n");
 }

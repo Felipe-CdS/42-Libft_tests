@@ -9,12 +9,17 @@
 /*   Updated: 2022/05/20 14:06:12 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libtests.h"
 #include "libft.h"
 
-int test_toupper()
-{
-	for(int i = 0; i < 130; ++i) if(toupper(i) != ft_toupper(i)) return (i);
-	return (0);
+#define TESTS_QUANT 1
+
+static int	test_1(){
+	for(int i = 0; i < 130; ++i) if(toupper(i) != ft_toupper(i)) return (KO);
+	return (OK);
+}
+
+void		test_toupper(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1};
+	tests_iterator(f_ptr, TESTS_QUANT);
 }

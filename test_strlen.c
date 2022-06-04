@@ -12,28 +12,39 @@
 #include "libtests.h"
 #include "libft.h"
 
-int test_strlen()
-{
-	char *entry;
-	char not_print_test[100] = {'1', 'a', '\2', '\1', '\0'};
-	char null_test[100];
+#define TESTS_QUANT 5
 
-	entry = "abcde12345";
-	if(strlen(entry) != ft_strlen(entry)) return (1);
-
-	entry = "a b c 1 2 3";
-	if(strlen(entry) != ft_strlen(entry)) return (2);
-
-	entry = "* - + ! | @";
-	if(strlen(entry) != ft_strlen(entry)) return (3);
-
-	entry = "";
-	if(strlen(entry) != ft_strlen(entry)) return (4);
-
-	//Special Cases:
-	if(strlen(not_print_test)	!= ft_strlen(not_print_test)) 	return (5);
-	if(strlen(null_test)		!= ft_strlen(null_test)) 		return (6);
-	
-	return (0);
+static int	test_1(){
+	char *entry = "abcde12345";
+	if(strlen(entry) != ft_strlen(entry)) return (KO);	
+	return (OK);
 }
 
+static int	test_2(){
+	char *entry = "a b c 1 2 3";
+	if(strlen(entry) != ft_strlen(entry)) return (KO);	
+	return (OK);
+}
+
+static int	test_3(){
+	char *entry = "* - + ! | @";
+	if(strlen(entry) != ft_strlen(entry)) return (KO);	
+	return (OK);
+}
+
+static int	test_4(){
+	char *entry = "";
+	if(strlen(entry) != ft_strlen(entry)) return (KO);	
+	return (OK);
+}
+
+static int	test_5(){
+	char entry[] = {'1', 'a', '\2', '\1', '\0'};
+	if(strlen(entry) != ft_strlen(entry)) return (KO);	
+	return (OK);
+}
+
+void		test_strlen(){	
+	t_func_array f_ptr[5] = {&test_1, &test_2, &test_3, &test_4, &test_5};
+	tests_iterator(f_ptr, 5);
+}

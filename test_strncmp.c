@@ -13,25 +13,75 @@
 #include "libft.h"
 #include "libtests.h"
 
-int	test_strncmp()
-{
+#define TESTS_QUANT 7
+
+#define CHECK_COND strncmp(entry1, entry2, size) != ft_strncmp(entry1, entry2, size)
+
+// equal entries && full size
+static int	test_1(){		
+
+	char *entry1 = "abcde12345";
+	char *entry2 = "abcde12345";
+	size_t	size = ft_strlen(entry1);
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
+
+// equal entries && random size < full size
+static int	test_2(){
+	char *entry1 = "abcde12345";
+	char *entry2 = "abcde12345";
+	size_t	size = 6;
+	if(CHECK_COND)	return (KO);
+	return (OK);
+
+}
+
+// equal entries && random size > full size
+static int	test_3(){	
+	char *entry1 = "abcde12345";
+	char *entry2 = "abcde12345";
+	size_t	size = 100;
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
+
+// equal entries && size <= 0
+static int	test_4(){
+	char *entry1 = "abcde12345";
+	char *entry2 = "abcde12345";
+	size_t	size = -123;
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
+
+// Char is a space
+static int	test_5(){		
+	return (ND);
+}
+
+// Char isn't at src
+static int	test_6(){		
+	return (ND);
+}
+
+// Src is empty
+static int	test_7(){		
+	return (ND);
+}
+
+void	test_strncmp(){	
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7};
+	tests_iterator(f_ptr, TESTS_QUANT);
+}
+
+// int	test_strncmp()
+// {
 	// char		*entry1;
 	// char		*entry2;
 	// char		spc_c1[100] = {'H', 'e', 'l', 'l', 'o', '\1', '\2', '\3', '\0'};
 	// char		spc_c2[100];
 	// unsigned int	size;
-
-	// // equal entries && full size
-	// entry1	= "abcde12345";
-	// entry2	= "abcde12345";
-	// size	= ft_strlen(entry1);
-	// if(strncmp(entry1, entry2, size) != ft_strncmp(entry1, entry2, size))	return (1);
-
-	// // equal entries && random size < full size
-	// entry1	= "abcde12345";
-	// entry2	= "abcde12345";
-	// size	= 6;
-	// if(strncmp(entry1, entry2, size) != ft_strncmp(entry1, entry2, size))	return (2);
 
 	// // equal entries && random size > full size
 	// entry1	= "abcde12345";
@@ -75,5 +125,5 @@ int	test_strncmp()
 	// size	= ft_strlen(spc_c1);
 	// if(strncmp(spc_c1, entry2, size) != ft_strncmp(spc_c1, entry2, size))	return (9);
 
-	return (0);
-}
+// 	return (0);
+// }

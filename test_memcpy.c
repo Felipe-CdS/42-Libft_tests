@@ -12,8 +12,9 @@
 #include "libtests.h"
 #include "libft.h"
 
-int test_memcpy()
-{
+#define TESTS_QUANT 2
+
+static int	test_1(){
 	const int	size = 10;
 	char 		*src = "Hello World...";
 	char		real_return[15] = "";
@@ -22,7 +23,16 @@ int test_memcpy()
 	memcpy(real_return, src, size);
 	ft_memcpy(test_return, src, size);
 
-	if(strcmp(real_return, test_return)) return (1);
+	if(strcmp(real_return, test_return) != 0) return (KO);
 
-	return (0);
+	return (OK);
+}
+
+static int	test_2(){
+	return (ND);
+}
+
+void		test_memcpy(){
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2};
+	tests_iterator(f_ptr, TESTS_QUANT);
 }
