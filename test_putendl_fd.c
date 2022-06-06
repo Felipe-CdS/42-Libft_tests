@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 09:27:23 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/06 12:15:30 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/06 12:25:11 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include "libft.h"
 
 static int	test_1(){
-	/*
 	char	test_str[13];
 	char	real_str[13];
 	FILE	*test_fp;
@@ -38,11 +37,7 @@ static int	test_1(){
 	// printnmem(real_str, 13); // debug print
 
 	if(ft_memcmp(test_str, real_str, 13) != 0) return (KO);
-	*/
-	int x = 22103;
-	//itoa(x)
-	ft_putnbr_fd(x, 1);
-	return (ND);
+	return (OK);
 }
 
 void		test_putendl_fd(){	

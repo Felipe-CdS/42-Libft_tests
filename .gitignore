@@ -1,4 +1,5 @@
 libtests.a
 libft.a
 __.*
+.fd_*
 a.out
