@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:05:40 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/06 09:05:47 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/06 12:50:57 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len); // Done
 int		ft_atoi(const char *str); //Done
 
 void	*ft_calloc(size_t count, size_t size);
-char	*strdup(const char *s1);
+char	*ft_strdup(const char *s1);
 
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);

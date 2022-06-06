@@ -15,7 +15,7 @@ LINUX_FLAG	:=	`pkg-config --cflags --libs libbsd-overlay`
 all: $(NAME)
 
 clean:
-	rm -f *.o  a.out .fd_*
+	rm -f *.o  a.out .fd_* __.*
 
 fclean:
 	rm -f *.o __.* a.out libtests.a libft.a
