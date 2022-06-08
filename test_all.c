@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/08 15:18:40 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:24:18 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -123,19 +123,31 @@ void	test_all()
 	printf("\t> Test 25) ft_strjoin:\t\t");
 	test_strjoin();
 
-	printf("\t> Test XX) ft_itoa:\t\t");
+	printf("\t> Test 26) ft_strtrim:\t\t");
+	test_strtrim();
+
+	printf("\t> Test 27) ft_split:\t\t");
+	test_split();
+
+	printf("\t> Test 28) ft_itoa:\t\t");
 	test_itoa();
 
-	printf("\t> Test XX) ft_putchar_fd:\t");
+	printf("\t> Test 29) ft_strmapi:\t\t");
+	test_strmapi();
+
+	printf("\t> Test 30) ft_striteri:\t\t");
+	test_striteri();
+
+	printf("\t> Test 31) ft_putchar_fd:\t");
 	test_putchar_fd();
 	
-	printf("\t> Test XX) ft_putstr_fd:\t");
+	printf("\t> Test 32) ft_putstr_fd:\t");
 	test_putstr_fd();
 	
-	printf("\t> Test XX) ft_putendl_fd:\t");
+	printf("\t> Test 33) ft_putendl_fd:\t");
 	test_putendl_fd();
 
-	printf("\t> Test XX) ft_putnbr_fd:\t");
+	printf("\t> Test 34) ft_putnbr_fd:\t");
 	test_putnbr_fd();
 
 	printf("+-----------------------------------------------------------------------+\n");

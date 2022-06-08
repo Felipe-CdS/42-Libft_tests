@@ -6,7 +6,7 @@
 	/*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 	/*                                                +#+#+#+#+#+   +#+           */
 	/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/08 15:15:55 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/08 17:19:42 by fcoutinh         ###   ########.fr       */
 	/*                                                                            */
 	/* ************************************************************************** */
 #include <unistd.h>
@@ -53,15 +53,19 @@ void	test_atoi();
 void	test_calloc();
 void	test_strdup();
 
+
+void	test_substr();
+void	test_strjoin();
+void	test_strtrim();
+void	test_split();
 void	test_itoa();
+void	test_strmapi();
+void	test_striteri();
 void	test_putchar_fd();
 void	test_putstr_fd();
 void	test_putendl_fd();
 void	test_putnbr_fd();
-void	test_substr();
-void	test_strjoin();
 
-// void	test_single();
 void	test_all();
 void	tests_iterator(t_func_array *f_ptr, int tests_quant);
 void	printnmem(void *s, size_t n);

@@ -10,7 +10,7 @@ static int	test_1(){
 }
 
 void		test_template(){	
-	t_func_array f_ptr[1] = { &test_1 };
-	tests_iterator(f_ptr, 1);
+	t_func_array f_ptr[TESTS_QUANT] = { &test_1 };
+	tests_iterator(f_ptr, TESTS_QUANT);
 }
 
