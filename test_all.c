@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/06 11:53:16 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/08 12:18:08 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -116,6 +116,9 @@ void	test_all()
 	test_strdup();
 
 	printf("+-----------------------------------------------------------------------+\n");
+
+	printf("\t> Test XX) ft_itoa:\t\t");
+	test_itoa();
 
 	printf("\t> Test XX) ft_putchar_fd:\t");
 	test_putchar_fd();

@@ -1,19 +1,20 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
+	/* ************************************************************************** */
+	/*                                                                            */
+	/*                                                        :::      ::::::::   */
 /*   libtests.h                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/06 11:51:31 by fcoutinh         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+	/*                                                    +:+ +:+         +:+     */
+	/*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
+	/*                                                +#+#+#+#+#+   +#+           */
+	/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
+/*   Updated: 2022/06/08 12:48:10 by fcoutinh         ###   ########.fr       */
+	/*                                                                            */
+	/* ************************************************************************** */
 #include <unistd.h>
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 #include "libft.h"
 
 #define OK 1
@@ -52,6 +53,7 @@ void	test_atoi();
 void	test_calloc();
 void	test_strdup();
 
+void	test_itoa();
 void	test_putchar_fd();
 void	test_putstr_fd();
 void	test_putendl_fd();
