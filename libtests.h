@@ -6,7 +6,7 @@
 	/*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 	/*                                                +#+#+#+#+#+   +#+           */
 	/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/08 12:48:10 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:15:55 by fcoutinh         ###   ########.fr       */
 	/*                                                                            */
 	/* ************************************************************************** */
 #include <unistd.h>
@@ -58,8 +58,8 @@ void	test_putchar_fd();
 void	test_putstr_fd();
 void	test_putendl_fd();
 void	test_putnbr_fd();
-// void	test_substr();
-// int		test_strjoin();
+void	test_substr();
+void	test_strjoin();
 
 // void	test_single();
 void	test_all();

@@ -6,14 +6,20 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:00:25 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/03 14:57:52 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:18:11 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 #include "libtests.h"
 
-int test_substr()
+#define TESTS_QUANT 0 
+
+void test_substr()
 {
+	t_func_array f_ptr[TESTS_QUANT] = { };
+	tests_iterator(f_ptr, TESTS_QUANT);
+
+	/*
 	char	*src;
 	char	*dst;
 
@@ -40,7 +46,6 @@ int test_substr()
 	dst = ft_substr(src, 6,	100);
 	if(strcmp(dst, "World"))	return (4);
 	free(dst);
-
-	return (0);
+	*/
 }
 

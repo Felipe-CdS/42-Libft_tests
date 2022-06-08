@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/08 12:18:08 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/08 15:18:40 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -29,7 +29,7 @@ void	printnmem(void *s, size_t n)
 
 void	tests_iterator(t_func_array *f_ptr, int tests_quant)
 {
-	if(!tests_quant) printf(YEL "[FUNCTION OR TESTS NOT IMPLEMENTED YET]" RESET);
+	if(!tests_quant) printf(YEL "[NOT IMPLEMENTED YET]" RESET);
 	for(int i = 0; i < tests_quant; i++)
 	{
 		int ret = (*f_ptr[i])();
@@ -117,6 +117,12 @@ void	test_all()
 
 	printf("+-----------------------------------------------------------------------+\n");
 
+	printf("\t> Test 24) ft_substr:\t\t");
+	test_substr();
+	
+	printf("\t> Test 25) ft_strjoin:\t\t");
+	test_strjoin();
+
 	printf("\t> Test XX) ft_itoa:\t\t");
 	test_itoa();
 
@@ -132,13 +138,5 @@ void	test_all()
 	printf("\t> Test XX) ft_putnbr_fd:\t");
 	test_putnbr_fd();
 
-	// printf("|\t> Test 23) ft_substr:\t\t");
-	// test_single(&test_substr);
-	// printf("\t\t\t\t|\n");
-	
-	// printf("|\t> Test 24) ft_strjoin:\t\t");
-	// test_single(&test_strjoin);
-	// printf("\t\t\t\t|\n");
-	
 	printf("+-----------------------------------------------------------------------+\n");
 }
