@@ -13,24 +13,32 @@
 #include "libft.h"
 
 #define TESTS_QUANT 2
+#define CMP_CHECK memcmp(real_return, test_return, SIZE)
 
+// 1) Basic test;
 static int	test_1(){
-	char *entry, real_return[15], test_return[15];
+	int SIZE = 15;
+	char real_return[15] = "Hello World...";
+	char test_return[15] = "Hello World...";
 
-	entry = "Hello World...";
-	strcpy(real_return, entry);
-	strcpy(test_return, entry);	
+	bzero(real_return, SIZE);
+	ft_bzero(test_return ,SIZE);
 
-	bzero(real_return, 10);
-	ft_bzero(test_return ,10);
-
-	if(strcmp(real_return, test_return) != 0) return (KO);
-
+	if(CMP_CHECK != 0) return (KO);
 	return (OK);
 }
 
+// 2) NULL arrays;
 static int	test_2(){
-	return (ND);
+	int SIZE = 15;
+	char real_return[15];
+	char test_return[15];
+
+	bzero(real_return, SIZE);
+	ft_bzero(test_return ,SIZE);
+
+	if(CMP_CHECK != 0) return (KO);
+	return (OK);
 }
 
 void		test_bzero(){	

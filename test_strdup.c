@@ -29,7 +29,7 @@ static int	test_1(){
 	result = CMP_CHECK;
 	free(real_dst);
 	free(test_dst);
-	if(CMP_CHECK != 0) return (KO);
+	if(result != 0) return (KO);
 	return (OK);
 }
 
@@ -47,7 +47,7 @@ static int	test_2(){
 	result = CMP_CHECK;
 	free(real_dst);
 	free(test_dst);
-	if(CMP_CHECK != 0) return (KO);
+	if(result != 0) return (KO);
 	return (OK);
 }
 

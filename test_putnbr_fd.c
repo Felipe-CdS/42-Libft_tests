@@ -16,19 +16,18 @@
 #define TESTS_QUANT 2
 
 static int	test_1(){
-	int entry;
-	int result;
-	char file_str[100];
-	FILE *test_fp;
+	int		entry = 1234;
+	int		result = 0;
+	char	file_str[100];
+	FILE	*test_fp;
 
-	entry = 1234;
+	ft_bzero(file_str, 100);
 	test_fp = fopen(".fd_T4", "rw+t");
 	ft_putnbr_fd(entry, 16);
 
-	// Test check
-	fread(file_str, sizeof(char), 5, test_fp);
+	// Test check	
+	fread(file_str, sizeof(char), 4, test_fp);		
 	result = ft_atoi(file_str);
-
 	fclose(test_fp);
 
 	if(entry != result) return (KO);
@@ -36,19 +35,18 @@ static int	test_1(){
 }
 
 static int	test_2(){
-	int entry;
-	int result;
+	int entry = INT_MIN;
+	int result = 0;
 	char file_str[100];
 	FILE *test_fp;
 
-	entry = INT_MIN;
+	ft_bzero(file_str, 100);
 	test_fp = fopen(".fd_T5", "rw+t");
 	ft_putnbr_fd(entry, 17);
 
 	// Test check
 	fread(file_str, sizeof(char), 20, test_fp);
 	result = ft_atoi(file_str);
-
 	fclose(test_fp);
 
 	if(entry != result) return (KO);
