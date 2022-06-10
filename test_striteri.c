@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:24:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/10 14:46:32 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/10 14:58:50 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 
 #define TESTS_QUANT 1
 
-void		test_function(unsigned int index,  char *char_ptr)
+static void		test_function(unsigned int index,  char *char_ptr)
 {
+	(void) index;
 	char iteration_result;
 
-	iteration_result = ft_toupper(char_ptr[index]);
-	ft_memmove(&char_ptr[index], &iteration_result, 1);
+	iteration_result = ft_toupper(char_ptr[0]);
+	ft_memmove(&char_ptr[0], &iteration_result, 1);
 }
 
 
