@@ -6,87 +6,91 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:17:32 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/01 09:16:44 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/10 15:41:49 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libtests.h"
 #include "libft.h"
 
-#define TESTS_QUANT 7
+#define TESTS_QUANT 11
 
-#define CHECK_COND ft_strnstr(haystack, needle, ft_strlen(haystack)) !=
-
+// Basic positive entry
 static int	test_1(){
-	return (ND);
+	char *entry = "12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Basic negative entry 
 static int	test_2(){		
-	return (ND);
+	char *entry = "-12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Positive entry with +
 static int	test_3(){		
-	return (ND);
+	char *entry = "+12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Entry with numbers and letters
 static int	test_4(){		
-	return (ND);
+	char *entry = "12345abcd";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Entry with letters and numbers
 static int	test_5(){		
-	return (ND);
+	char *entry = "abcd12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Entry with just letters
 static int	test_6(){		
-	return (ND);
+	char *entry = "abcd";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Entry with just a sign
 static int	test_7(){
-	return (ND);
+	char *entry = "-";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
 }
 
+// Entry with two signs
+static int	test_8(){
+	char *entry = "-+12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
+}
+
+// Empty entry
+static int	test_9(){
+	char *entry = "";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
+}
+
+// Entry with spaces
+static int	test_10(){
+	char *entry = "   12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
+}
+
+// Entry with nonprintable
+static int	test_11(){
+	char entry[100] = {'\t', ' ', '\1', '1', '2', '\0'};
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
+}
 void	test_atoi(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8, &test_9, &test_10, &test_11 };
 	tests_iterator(f_ptr, TESTS_QUANT);
 }
-
-// int	test_atoi()
-// {
-// 	char *entry;
-// 	// Basic positive entry
-// 	entry = "12345";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (1);
-
-// 	// Basic negative entry 
-// 	entry = "-12345";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (2);
-
-// 	// Positive entry with +
-// 	entry = "+12345";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (3);
-
-// 	// Entry with numbers and letters
-// 	entry = "12345abcd";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (4);
-
-// 	// Entry with letters and numbers
-// 	entry = "abcd12345";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (5);
-
-// 	// Entry with just letters
-// 	entry = "abcd";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (6);
-
-// 	// Entry with just a sign
-// 	entry = "-";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (7);
-
-// 	// Entry with two signs
-// 	entry = "-+12345";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (8);
-
-// 	// Empty entry
-// 	entry = "";
-// 	if(atoi(entry) != ft_atoi(entry)) 		return (9);
-
-// 	return (0);
-// }
