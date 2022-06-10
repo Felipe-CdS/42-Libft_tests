@@ -9,71 +9,85 @@
 /*   Updated: 2022/06/08 11:53:34 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libtests.h"
 #include "libft.h"
 
-#define TESTS_QUANT 3
+#define TESTS_QUANT 4
+#define CMP_CHECK_1	(memcmp(real_dst, test_dst, (SIZE - OFFSET)) || memcmp(real_src, test_src, SIZE))
+#define CMP_CHECK_2	test_dst != test_return
 
-//  1) Basic Test (No overlap)
-static int	test_1(){
-		return (ND);
-	int 	size = 12;
- 	char	*target = "Hello World";
- 	char	real_src[100], real_dst[100];
-	char	test_src[100], test_dst[100];
+//  1) Basic Test (No overlap & src < dst)
+// <-----s----->                 
+//                  <-----d----->
+static int	test_1()
+{
+	int 	SIZE = 12, OFFSET = 0;
+	char	test_src[100] = "Hello World", 	real_src[100] = "Hello World";	
+	char	test_dst[100], 					real_dst[100];
+	void	*test_return;
 
- 	ft_strlcpy(	real_src, target, size);
- 	ft_strlcpy(	test_src, target, size);
-
- 	memmove(	real_dst, real_src, size);
-	ft_memmove(	test_dst, test_src, size);
+	memmove(real_dst, real_src,  (SIZE - OFFSET));
+	test_return = ft_memmove(test_dst, test_src, (SIZE - OFFSET));
 	
- 	// printf("%s %s\t", test_dst, real_dst);
- 	if(memcmp(real_dst, test_dst, size) || memcmp(real_src, test_src, size)) return (KO);
+ 	if(CMP_CHECK_1 || CMP_CHECK_2) return (KO);
  	return (OK);
 }
 
 //  2) Full overlap
-static int	test_2(){
-	return (ND);
-	int 	size = 12;
- 	char	*target = "Hello World";
- 	char	real_src[size], *real_dst;
- 	char	test_src[size], *test_dst;
+//    <-----s-----> 
+//    <-----d----->
+static int	test_2()
+{
+	int 	SIZE = 12, OFFSET = 0;
+	char	test_src[100] = "Hello World", 	real_src[100] = "Hello World";	
+	char	*test_dst = test_src + OFFSET,	*real_dst = real_src + OFFSET;
+	void	*test_return;
 
- 	ft_strlcpy(real_src, target, size);
- 	ft_strlcpy(test_src, target, size);
- 	real_dst = memmove(		real_src, real_src, size);
-	test_dst = ft_memmove(	test_src, test_src, size);
+	memmove(real_dst, real_src, (SIZE - OFFSET));
+	test_return = ft_memmove(test_dst, test_src, (SIZE - OFFSET));
 
- 	// printf("%s %s\t", test_dst, real_dst);
- 	if(memcmp(real_dst, test_dst, size) || memcmp(real_src, test_src, size)) return (KO);
+ 	if(CMP_CHECK_1 != 0 || CMP_CHECK_2) return (KO);
  	return (OK);
 }
 
 //  3) src < dst with overlap
-static int	test_3(){
-	return (ND);
-	int 	size = 12;
- 	char	*target = "Hello World";
- 	char	real_src[size], *real_dst;
- 	char	test_src[size], *test_dst;
+//      <-----s----->          
+//             <-----d----->
+static int	test_3()
+{
+	int 	SIZE = 12, OFFSET = 10;
+	char	test_src[100] = "Hello World", 	real_src[100] = "Hello World";	
+	char	*test_dst = test_src + OFFSET,	*real_dst = real_src + OFFSET;
+	void	*test_return;
 
- 	ft_strlcpy(real_src, target, size);
- 	ft_strlcpy(test_src, target, size);
- 	real_dst = memmove(		real_src + 5, real_src, size);
-	test_dst = ft_memmove(	test_src + 5, test_src, size);
+	memmove(real_dst, real_src,  (SIZE - OFFSET));
+	test_return = ft_memmove(test_dst, test_src, (SIZE - OFFSET));
 
- 	printf("%s %s\t", test_dst, real_dst);
-	printnmem(real_src, size);
-	printf("||");
-	printnmem(test_src, size);
- 	if(memcmp(real_dst, test_dst, size) || memcmp(real_src, test_src, size)) return (KO);
+ 	if(CMP_CHECK_1 != 0 || CMP_CHECK_2) return (KO);
+ 	return (OK);
+}
+
+//  3) src > dst with overlap
+//            <-----s----->          
+//   <-----d----->
+static int	test_4()
+{
+	int 	SIZE = 12, OFFSET = 5;
+	char	test_dst[100], 					real_dst[100];
+	char	*test_src = test_dst + OFFSET,	*real_src = real_dst + OFFSET;
+	void	*test_return;
+
+	ft_strlcpy(test_src, "Hello World", SIZE);
+	ft_strlcpy(real_src, "Hello World", SIZE);
+
+	memmove(real_dst, real_src, (SIZE - OFFSET));
+	test_return = ft_memmove(test_dst, test_src, (SIZE - OFFSET));
+
+ 	if(CMP_CHECK_1 != 0 || CMP_CHECK_2) return (KO);
  	return (OK);
 }
 
 void		test_memmove(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4};
 	tests_iterator(f_ptr, TESTS_QUANT);
 }

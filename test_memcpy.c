@@ -12,27 +12,82 @@
 #include "libtests.h"
 #include "libft.h"
 
-#define TESTS_QUANT 2
+#define TESTS_QUANT 4
+#define CMP_CHECK_1	(memcmp(real_dst, test_dst, (SIZE - OFFSET)) || memcmp(real_src, test_src, SIZE))
+#define CMP_CHECK_2	test_dst != test_return
 
-static int	test_1(){
-	const int	size = 10;
-	char 		*src = "Hello World...";
-	char		real_return[15] = "";
-	char		test_return[15] = "";
+//  1) Basic Test (No overlap & src < dst)
+// <-----s----->                 
+//                  <-----d----->
+static int	test_1()
+{
+	int 	SIZE = 12, OFFSET = 0;
+	char	test_src[100] = "Hello World", 	real_src[100] = "Hello World";	
+	char	test_dst[100], 					real_dst[100];
+	void	*test_return;
 
-	memcpy(real_return, src, size);
-	ft_memcpy(test_return, src, size);
-
-	if(strcmp(real_return, test_return) != 0) return (KO);
-
-	return (OK);
+	memcpy(real_dst, real_src,  (SIZE - OFFSET));
+	test_return = ft_memcpy(test_dst, test_src, (SIZE - OFFSET));
+	
+ 	if(CMP_CHECK_1 || CMP_CHECK_2) return (KO);
+ 	return (OK);
 }
 
-static int	test_2(){
-	return (ND);
+//  2) Full overlap
+//    <-----s-----> 
+//    <-----d----->
+static int	test_2()
+{
+	int 	SIZE = 12, OFFSET = 0;
+	char	test_src[100] = "Hello World", 	real_src[100] = "Hello World";	
+	char	*test_dst = test_src + OFFSET,	*real_dst = real_src + OFFSET;
+	void	*test_return;
+
+	memcpy(real_dst, real_src, (SIZE - OFFSET));
+	test_return = ft_memcpy(test_dst, test_src, (SIZE - OFFSET));
+
+ 	if(CMP_CHECK_1 != 0 || CMP_CHECK_2) return (KO);
+ 	return (OK);
+}
+
+//  3) src < dst with overlap
+//      <-----s----->          
+//             <-----d----->
+static int	test_3()
+{
+	int 	SIZE = 12, OFFSET = 10;
+	char	test_src[100] = "Hello World", 	real_src[100] = "Hello World";	
+	char	*test_dst = test_src + OFFSET,	*real_dst = real_src + OFFSET;
+	void	*test_return;
+
+	memcpy(real_dst, real_src,  (SIZE - OFFSET));
+	test_return = ft_memcpy(test_dst, test_src, (SIZE - OFFSET));
+
+ 	if(CMP_CHECK_1 != 0 || CMP_CHECK_2) return (KO);
+ 	return (OK);
+}
+
+//  3) src > dst with overlap
+//            <-----s----->          
+//   <-----d----->
+static int	test_4()
+{
+	int 	SIZE = 12, OFFSET = 5;
+	char	test_dst[100], 					real_dst[100];
+	char	*test_src = test_dst + OFFSET,	*real_src = real_dst + OFFSET;
+	void	*test_return;
+
+	ft_strlcpy(test_src, "Hello World", SIZE);
+	ft_strlcpy(real_src, "Hello World", SIZE);
+
+	memcpy(real_dst, real_src, (SIZE - OFFSET));
+	test_return = ft_memcpy(test_dst, test_src, (SIZE - OFFSET));
+
+ 	if(CMP_CHECK_1 != 0 || CMP_CHECK_2) return (KO);
+ 	return (OK);
 }
 
 void		test_memcpy(){
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4};
 	tests_iterator(f_ptr, TESTS_QUANT);
 }
