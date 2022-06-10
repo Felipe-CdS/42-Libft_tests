@@ -3,3 +3,4 @@ libft.a
 __.*
 .fd_*
 a.out
+*.swp
