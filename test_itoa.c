@@ -16,9 +16,8 @@
 #define TESTS_QUANT 3
 
 static int	test_1(){
-	int start_x;
+	int start_x, result_x, test_result = OK;
 	char *str_x;
-	int	result_x;
 
 	start_x = -1000000;
 
@@ -26,37 +25,41 @@ static int	test_1(){
 	{
 		str_x = ft_itoa(start_x);
 		result_x = ft_atoi(str_x);
-		if(start_x != result_x) return (KO);
+		free(str_x);
+		if(start_x != result_x) test_result = KO;
+		
+		if(test_result == KO)
+		{
+			break ;
+		}
 		start_x++;
 	}
 
-	return (OK);
+	return (test_result);
 }
 
 static int	test_2(){
-	int start_x;
+	int start_x, result_x, test_result = OK;
 	char *str_x;
-	int	result_x;
 
 	start_x = INT_MIN;
 	str_x = ft_itoa(start_x);
 	result_x = ft_atoi(str_x);
-
-	if(start_x != result_x) return (KO);
-	return (OK);
+	free(str_x);
+	if(start_x != result_x) test_result = KO;
+	return (test_result);
 }
 
 static int	test_3(){
-	int start_x;
+	int start_x, result_x, test_result = OK;
 	char *str_x;
-	int	result_x;
 
 	start_x = INT_MAX;
 	str_x = ft_itoa(start_x);
 	result_x = ft_atoi(str_x);
-
-	if(start_x != result_x) return (KO);
-	return (OK);
+	free(str_x);
+	if(start_x != result_x) test_result = KO;
+	return (test_result);
 }
 
 void		test_itoa(){	

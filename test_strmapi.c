@@ -24,13 +24,15 @@ static char test_function(unsigned int index,  char char_ptr)
 }
 
 static int	test_1(){
+	int	test_result = OK;
 	char entry[100]		= "Hello World!";
 	char *real_result	= "aaaaaaaaaaaa";	 
 	char *test_return;
 
 	test_return = ft_strmapi(entry, &test_function);
-	if(strcmp(real_result, test_return) != 0) return (KO);
-	return (OK);
+	if(strcmp(real_result, test_return) != 0) test_result = KO;
+	free(test_return);
+	return (test_result);
 }
 
 void		test_strmapi(){	

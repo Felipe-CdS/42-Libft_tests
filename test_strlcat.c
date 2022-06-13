@@ -37,8 +37,8 @@ static int test_1(){
 
 // 2) Truncate string
 static int test_2(){
-	char		*src, real_dst[100], test_dst[100];
-	size_t		real_ret, test_ret, buf_size;
+	char		*src, real_dst[100] = {}, test_dst[100] = {};
+	size_t		real_ret = 0, test_ret = 0, buf_size  = 0;
 
 	// Test setup
 	src	= "Hello World";

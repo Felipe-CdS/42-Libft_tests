@@ -59,8 +59,8 @@ static int	test_3(){
 
 // len == 0
 static int	test_4(){
-	char		*src, real_dst[100], test_dst[100];
-	size_t		real_ret, test_ret;
+	char		*src, real_dst[100] = {}, test_dst[100] = {};
+	size_t		real_ret = 0, test_ret = 0;
 
 	src	= "";
 	real_ret = strlcpy(real_dst, 		src,	0);

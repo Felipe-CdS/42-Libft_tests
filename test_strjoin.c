@@ -17,37 +17,43 @@
 
 // 1) Basic test
 static int	test_1(){
+	int		test_result = OK;
 	char	*s1 = "Hello ";
 	char	*s2 = "World";	
 	char	*dst;
 
 	dst = ft_strjoin(s1, s2);
 
-	if(strcmp(dst, "Hello World") != 0)	return (KO);
-	return (OK);
+	if(strcmp(dst, "Hello World") != 0) test_result = KO;
+	free(dst);	
+	return (test_result);
 }
 
 
 // 2) Empty src
 static int	test_2(){
+	int		test_result = OK;
 	char	*s1 = "";
 	char	*s2 = "Hello";	
 	char	*dst;
 
 	dst = ft_strjoin(s1, s2);
-	if(strcmp(dst, "Hello") != 0)	return (KO);
-	return (OK);
+	if(strcmp(dst, "Hello") != 0) test_result = KO;
+	free(dst);	
+	return (test_result);
 }
 
 // 2) Both empty src
 static int	test_3(){
+	int		test_result = OK;
 	char	*s1 = "";
 	char	*s2 = "";	
 	char	*dst;
 
 	dst = ft_strjoin(s1, s2);
-	if(strcmp(dst, "") != 0)	return (KO);
-	return (OK);
+	if(strcmp(dst, "") != 0) test_result = KO;
+	free(dst);	
+	return (test_result);
 }
 
 

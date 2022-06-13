@@ -16,51 +16,72 @@
 #define TESTS_QUANT 3
 
 static int	test_1(){
-	int		i = 0;
+	int		i = 0, test_result = OK;
 	char 	*entry = "Hello World. Hello World!";
 	char 	*real[100] = {"Hello", "World.", "Hello", "World!", NULL};
-	char 	**test;
+	char 	**test = NULL;
 
 	test = ft_split(entry, ' ');
 	while(real[i] || test[i])
 	{
-		if(!real[i] || !test[i]) return (KO);
-		if(strcmp(real[i], test[i]) != 0) return (KO);
+		if(strcmp(real[i], test[i]) != 0) test_result = KO;
 		i++;
 	}
-	return (OK);
+
+	i = 0;
+	while(test[i])
+	{
+		free(test[i]);
+		i++;
+	}
+	free(test);	
+	return (test_result);
 }
 
 static int	test_2(){
-	int		i = 0;
+	int		i = 0, test_result = OK;
 	char 	*entry = "HelloWorld!";
 	char 	*real[100] = {"HelloWorld!", NULL};
-	char 	**test;
+	char 	**test = NULL;
 
 	test = ft_split(entry, ' ');
 	while(real[i] || test[i])
 	{
-		if(!real[i] || !test[i]) return (KO);
-		if(strcmp(real[i], test[i]) != 0) return (KO);
+		if(strcmp(real[i], test[i]) != 0) test_result = KO;
 		i++;
 	}
-	return (OK);
+
+	i = 0;
+	while(test[i])
+	{
+		free(test[i]);
+		i++;
+	}
+	free(test);	
+	return (test_result);
 }
 
 static int	test_3(){
-	int		i = 0;
+	int		i = 0, test_result = OK;
 	char 	*entry = "";
 	char 	*real[100] = {NULL};
-	char 	**test;
+	char 	**test = NULL;
 
 	test = ft_split(entry, ' ');
 	while(real[i] || test[i])
 	{
-		if(!real[i] || !test[i]) return (KO);
-		if(strcmp(real[i], test[i]) != 0) return (KO);
+		if(strcmp(real[i], test[i]) != 0) test_result = KO;
 		i++;
 	}
-	return (OK);
+	
+	i = 0;
+	while(test[i])
+	{
+		free(test[i]);
+		i++;
+	}
+	free(test);	
+	return (test_result);
 }
 
 void		test_split(){	

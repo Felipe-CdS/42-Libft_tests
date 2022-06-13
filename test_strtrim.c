@@ -16,58 +16,68 @@
 #define TESTS_QUANT 5
 
 static int	test_1(){
+	int	test_result = OK;
 	char *entry = "Hello World!";
 	char *real = "H Wrd!";
 	char *test;
 	
 	test = ft_strtrim(entry, "elo");
 
-	if(strcmp(real, test) != 0) return (KO);
-	return (OK);
+	if(strcmp(real, test) != 0) test_result = KO;
+	free(test);
+	return (test_result);
 }
 
 static int	test_2(){
+	int	test_result = OK;
 	char *entry	= "Hello World!";
 	char *real	= "Hello World!";
 	char *test;
 	
 	test = ft_strtrim(entry, "j");
 
-	if(strcmp(real, test) != 0) return (KO);
-	return (OK);
+	if(strcmp(real, test) != 0) test_result = KO;
+	free(test);
+	return (test_result);
 }
 
 static int	test_3(){
+	int	test_result = OK;
 	char *entry	= "Hello World!";
 	char *real	= "Hello World!";
 	char *test;
 	
 	test = ft_strtrim(entry, "");
 
-	if(strcmp(real, test) != 0) return (KO);
-	return (OK);
+	if(strcmp(real, test) != 0) test_result = KO;
+	free(test);
+	return (test_result);
 }
 
 static int	test_4(){
+	int	test_result = OK;
 	char *entry	= "Hello World!       ";
 	char *real	= "HelloWorld!";
 	char *test;
 	
 	test = ft_strtrim(entry, " ");
 
-	if(strcmp(real, test) != 0) return (KO);
-	return (OK);
+	if(strcmp(real, test) != 0) test_result = KO;
+	free(test);
+	return (test_result);
 }
 
 static int	test_5(){
+	int	test_result = OK;
 	char *entry	= "";
 	char *real	= "";
 	char *test;
 	
 	test = ft_strtrim(entry, "abc");
 
-	if(strcmp(real, test) != 0) return (KO);
-	return (OK);
+	if(strcmp(real, test) != 0) test_result = KO;
+	free(test);
+	return (test_result);
 }
 
 

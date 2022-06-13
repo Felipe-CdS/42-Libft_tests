@@ -1,6 +1,6 @@
 CC			=	gcc
 NAME		=	a.out
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror ## -fsanitize=address
 TESTS_UTILS	=	test_all.o
 TESTS_OBJ	=	test_isalpha.o test_isdigit.o test_isalnum.o test_isascii.o test_isprint.o test_strlen.o test_memset.o test_bzero.o test_memcpy.o test_toupper.o test_tolower.o test_strchr.o test_strrchr.o test_strncmp.o test_memchr.o test_memcmp.o test_strnstr.o test_atoi.o test_strlcpy.o test_strlcat.o test_memmove.o test_calloc.o test_substr.o test_strjoin.o test_strdup.o test_putchar_fd.o test_putstr_fd.o test_putendl_fd.o test_putnbr_fd.o test_itoa.o test_split.o test_strtrim.o test_strmapi.o test_striteri.o
 BONUS_OBJ	=	test_lstnew.o
@@ -30,12 +30,15 @@ fclean:
 libtests.a: $(TESTS_OBJ) $(TESTS_UTILS) $(BONUS_OBJ)
 	@echo ">Creating Tests lib..."
 	ar -x libft.a
-	ar -crs libtests.a $(TESTS_OBJ) $(TESTS_UTILS) $(BONUS_OBJ)
+	ar rcs libtests.a $(TESTS_OBJ) $(TESTS_UTILS) $(BONUS_OBJ) ft_*.o
 	rm *.o
 
 #########################################################################
 ## Compile main function
 ## Special rules to compile on linux where bsd libs doesn't exist
+
+valgrind:
+	$(CC) main.c libft.a libtests.a -o $(NAME) $(CFLAGS) -g $(LINUX_FLAG)
 
 $(NAME): libft.a libtests.a
 ifeq ($(LF), 0)

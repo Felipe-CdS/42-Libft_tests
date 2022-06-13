@@ -14,23 +14,23 @@
 
 #define TESTS_QUANT 11
 
-// Basic positive entry
-static int	test_1(){
-	char *entry = "12345";
-	if(atoi(entry) != ft_atoi(entry))	return (KO);
-	return (OK);
-}
-
 // Basic negative entry 
-static int	test_2(){		
+static int	test_1(){
 	char *entry = "-12345";
 	if(atoi(entry) != ft_atoi(entry))	return (KO);
 	return (OK);
 }
 
 // Positive entry with +
-static int	test_3(){		
+static int	test_2(){		
 	char *entry = "+12345";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
+}
+
+// Float entry
+static int	test_3(){		
+	char *entry = "12345.6789";
 	if(atoi(entry) != ft_atoi(entry))	return (KO);
 	return (OK);
 }

@@ -38,7 +38,7 @@ static int	test_2(){
 static int	test_3(){	
 	char *entry1 = "abcde12345";
 	char *entry2 = "abcde12345";
-	size_t	size = 100;
+	size_t	size = ft_strlen(entry1); //100;
 	if(CHECK_COND)	return (KO);
 	return (OK);
 }
@@ -65,7 +65,7 @@ static int	test_5(){
 static int	test_6(){		
 	char *entry1	= "";
 	char *entry2	= "";
-	size_t	size	= 10;
+	size_t	size	= ft_strlen(entry1); // 10
 	if(CHECK_COND)	return (KO);
 	return (OK);
 }

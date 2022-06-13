@@ -16,22 +16,25 @@
 #define TESTS_QUANT 2
 
 static int	test_1(){
-	t_list *L;
+	int	test_result = OK;
 	char	*content = "First Node";
+	t_list *L;
 	size_t	size = ft_strlen(content);
 
 	L = ft_lstnew(content);
-	if(ft_strncmp(L->content, content, size) != 0) return (KO);
-	return (OK);
+	if(ft_strncmp(L->content, content, size) != 0) test_result = KO;
+	free(L);
+	return (test_result);
 }
 
 static int	test_2(){
+	int	content = 12345, test_result = OK;
 	t_list *L;
-	int		content = 12345;
 
 	L = ft_lstnew(&content);
-	if(*((int *) L->content) != content) return (KO);
-	return (OK);
+	if(*((int *) L->content) != content) test_result = KO;
+	free(L);
+	return (test_result);
 }
 
 void		test_lstnew(){	
