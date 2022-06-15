@@ -12,7 +12,7 @@
 #include "libft.h"
 #include "libtests.h"
 
-#define TESTS_QUANT 9
+#define TESTS_QUANT 10
 
 #define CMP_CHECK strchr(entry, search) != ft_strchr(entry, search)
 
@@ -73,8 +73,16 @@ static int	test_7(){
 	return (OK);
 }
 
-// Char is non printable
+// Src  and search are empty
 static int	test_8(){
+	char			*entry = "";
+	char			search = '\0';
+	if(CMP_CHECK)	return (KO);
+	return (OK);
+}
+
+// Char is non printable
+static int	test_9(){
 	char			entry[100] = {'H', 'e', 'l', 'l', 'o', '\1', '\2', '\3', '\0'};
 	char			search = '\1';
 	if(CMP_CHECK)	return (KO);
@@ -82,7 +90,7 @@ static int	test_8(){
 }
 
 // char is hidden
-static int	test_9(){
+static int	test_10(){
 	char			entry[100] = {'A', 'B', '\0', 'C', 'D', 'E'};
 	char			search = 'E';
 	if(CMP_CHECK)	return (KO);
@@ -90,6 +98,6 @@ static int	test_9(){
 }
 
 void	test_strchr(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8, &test_9};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8, &test_9, &test_10};
 	tests_iterator(f_ptr, TESTS_QUANT);
 }

@@ -20,41 +20,65 @@
 
 // Basic test
 static int	test_1(){
-	char		*src, real_dst[100], test_dst[100];
+	int			result = OK;
+	char		*src	= "Hello";
+	char		*test_dst = (char *) malloc(15 * sizeof(char));
+	char		*real_dst = (char *) malloc(15 * sizeof(char));
 	size_t		real_ret, test_ret;
 
-	src	= "Hello World";
-	real_ret = strlcpy(real_dst, 		src,	ft_strlen(src) + 1);
-	test_ret = ft_strlcpy(test_dst, 	src,	ft_strlen(src) + 1);
+	ft_memset(real_dst, 0, 15);
+	ft_memset(real_dst, 'a', 6);
+	ft_memset(test_dst, 0, 15);
+	ft_memset(test_dst, 'a', 6);
+	
+	real_ret = strlcpy(real_dst, 		src,	15);
+	test_ret = ft_strlcpy(test_dst, 	src,	15);
 
-	if (DST_ERROR || RET_ERROR)	return (KO);
-	return (OK);
+	if (DST_ERROR || RET_ERROR)	result = KO;
+	free(test_dst);
+	free(real_dst);
+	return (result);
 }
 
 // Truncate string
 static int	test_2(){
-	char		*src, real_dst[100], test_dst[100];
+	int			result = OK;
+	char		*src	= "Hello World";
+	char		*test_dst = (char *) malloc(sizeof(20));
+	char		*real_dst = (char *) malloc(sizeof(20));
 	size_t		real_ret, test_ret;
 
-	src	= "Hello World";
+	ft_bzero(real_dst, 20);
+	ft_bzero(test_dst, 20);
 	real_ret = strlcpy(real_dst, 		src,	ft_strlen(src) - 3);
 	test_ret = ft_strlcpy(test_dst, 	src,	ft_strlen(src) - 3);
 
-	if (DST_ERROR || RET_ERROR)	return (KO);
-	return (OK);
+	if (DST_ERROR || RET_ERROR)	result = KO;
+	free(test_dst);
+	free(real_dst);
+	return (result);
 }
 
-// Truncate string
+// Empty src
 static int	test_3(){
-	char		*src, real_dst[100], test_dst[100];
+	int			result = OK;
+	char		*src	= "";
+	char		*test_dst = (char *) malloc(sizeof(20));
+	char		*real_dst = (char *) malloc(sizeof(20));
 	size_t		real_ret, test_ret;
 
-	src	= "";
-	real_ret = strlcpy(real_dst, 		src,	ft_strlen(src) + 1);
-	test_ret = ft_strlcpy(test_dst, 	src,	ft_strlen(src) + 1);
+	ft_memset(real_dst, 0, 15);
+	ft_memset(real_dst, 'r', 6);
+	ft_memset(test_dst, 0, 15);
+	ft_memset(test_dst, 'r', 6);
+	
+	real_ret = strlcpy(real_dst, 		src,	15);
+	test_ret = ft_strlcpy(test_dst, 	src,	15);
 
-	if (DST_ERROR || RET_ERROR)	return (KO);
-	return (OK);
+	if (DST_ERROR || RET_ERROR)	result = KO;
+	free(test_dst);
+	free(real_dst);
+	return (result);
 }
 
 // len == 0

@@ -12,10 +12,9 @@
 #include "libft.h"
 #include "libtests.h"
 
-#define TESTS_QUANT 8
+#define TESTS_QUANT 9
 
 #define CHECK_COND ft_strnstr(haystack, needle, size) != strnstr(haystack, needle, size)
-
 
 // Successful find at start of string
 static int	test_1(){
@@ -89,7 +88,17 @@ static int	test_8(){
 	return (OK);
 }
 
+// Size in the middle of needle
+static int	test_9(){
+	char *haystack	= "Hello World";
+	char *needle	= "World";
+	size_t	size	= 10;
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
+
+
 void	test_strnstr(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8, &test_9 };
 	tests_iterator(f_ptr, TESTS_QUANT);
 }

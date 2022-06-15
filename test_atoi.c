@@ -58,7 +58,8 @@ static int	test_6(){
 
 // Entry with just a sign
 static int	test_7(){
-	char *entry = "-";
+	char *entry = "";
+	printf("%d", atoi(""));
 	if(atoi(entry) != ft_atoi(entry))	return (KO);
 	return (OK);
 }

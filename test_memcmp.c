@@ -12,7 +12,7 @@
 #include "libft.h"
 #include "libtests.h"
 
-#define TESTS_QUANT 7
+#define TESTS_QUANT 8
 
 #define CHECK_COND memcmp(entry1, entry2, size) != ft_memcmp(entry1, entry2, size)
 
@@ -79,7 +79,17 @@ static int	test_7(){
 	return (OK);
 }
 
+// entries with non-printable chars && any size
+static int	test_8(){		
+	char *entry1 = "t\200";
+	char *entry2 = "t\0";
+	size_t	size = ft_strlen(entry1);
+	if(CHECK_COND)	return (KO);
+	return (OK);
+}
+
+
 void	test_memcmp(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7 };
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8 };
 	tests_iterator(f_ptr, TESTS_QUANT);
 }
