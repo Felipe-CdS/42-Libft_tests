@@ -15,15 +15,13 @@
 #define TESTS_QUANT 3
 
 static int	test_1(){
-	int size, test_result = OK;
-	char	*buffer = NULL;
-	unsigned long i;
+	unsigned long	i = 0;
+	int				size  = 10, test_result = OK;
+	char			*buffer = NULL;
 
-	i = 0;
-	size = 10;
 	buffer = (char *) ft_calloc(size, sizeof(char));
 	if(!buffer) test_result = KO;
-	while(i < size * sizeof(int))
+	while(i < size * sizeof(char))
 	{
 		if(buffer[i] != '\0') test_result = KO;
 		i++;

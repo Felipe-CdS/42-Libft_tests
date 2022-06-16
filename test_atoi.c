@@ -56,34 +56,34 @@ static int	test_6(){
 	return (OK);
 }
 
-// Entry with just a sign
-static int	test_7(){
-	char *entry = "";
-	printf("%d", atoi(""));
-	if(atoi(entry) != ft_atoi(entry))	return (KO);
-	return (OK);
-}
-
 // Entry with two signs
-static int	test_8(){
+static int	test_7(){
 	char *entry = "-+12345";
 	if(atoi(entry) != ft_atoi(entry))	return (KO);
 	return (OK);
 }
 
 // Empty entry
-static int	test_9(){
-	char *entry = "";
+static int	test_8(){
+	char entry[100] = {'\0'};
 	if(atoi(entry) != ft_atoi(entry))	return (KO);
 	return (OK);
 }
 
 // Entry with spaces
-static int	test_10(){
-	char *entry = "   12345";
+static int	test_9(){
+	char *entry = "054854";
 	if(atoi(entry) != ft_atoi(entry))	return (KO);
 	return (OK);
 }
+
+// Entry with nonprintable
+static int	test_10(){
+	char *entry = "\t\v\f\r\n \f-06050";
+	if(atoi(entry) != ft_atoi(entry))	return (KO);
+	return (OK);
+}
+
 
 // Entry with nonprintable
 static int	test_11(){
