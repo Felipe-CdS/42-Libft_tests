@@ -42,7 +42,6 @@ static int	test_2(){
 
 // 3) LEN == 0
 static int	test_3(){
-	return (ND);
 	int		test_result = OK;
 	char	*s1 = "Hello World";
 	char	*dst;
@@ -56,7 +55,6 @@ static int	test_3(){
 
 // 4) src empty
 static int	test_4(){
-	return (ND);
 	int		test_result = OK;
 	char	*s1 = "";
 	char	*dst;
