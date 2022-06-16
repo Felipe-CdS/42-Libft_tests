@@ -13,7 +13,7 @@
 #include "libtests.h"
 #include "libft.h"
 
-#define TESTS_QUANT 3
+#define TESTS_QUANT 4
 
 static int	test_1(){
 	int start_x, result_x, test_result = OK;
@@ -62,7 +62,18 @@ static int	test_3(){
 	return (test_result);
 }
 
+static int	test_4(){
+	int start_x, test_result = OK;
+	char *str_x;
+
+	start_x = 0;
+	str_x = ft_itoa(start_x);
+	if(ft_strncmp(str_x, "0", 1) != 0) test_result = KO;
+	free(str_x);
+	return (test_result);
+}
+
 void		test_itoa(){	
-	t_func_array f_ptr[TESTS_QUANT] = { &test_1, &test_2, &test_3 };
+	t_func_array f_ptr[TESTS_QUANT] = { &test_1, &test_2, &test_3, &test_4 };
 	tests_iterator(f_ptr, TESTS_QUANT);
 }
