@@ -23,7 +23,7 @@ static int	test_1(){
 	test_fp= fopen(".fd_T3", "rw+t");
 
 	// Test exec	
-	write(14, "Hello World", 12); write(14, "\n", 1);
+	write(14, "Hello World\n", 12);
 	ft_putendl_fd("Hello World", 15);
 
 	// test check
@@ -36,7 +36,7 @@ static int	test_1(){
 	// printnmem(test_str, 13); // debug print
 	// printnmem(real_str, 13); // debug print
 
-	if(ft_memcmp(test_str, real_str, 13) != 0) return (KO);
+	if(ft_memcmp(test_str, real_str, 12) != 0) return (KO);
 	return (OK);
 }
 
