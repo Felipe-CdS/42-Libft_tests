@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 10:47:28 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/10 17:25:51 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:06:32 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -154,8 +154,26 @@ void	test_all()
 	printf("|\t\t\t\tBonus Tests\t\t\t\t|\n");
 	printf("+-----------------------------------------------------------------------+\n");
 
-	printf("\t> Test 35) ft_lstnew:\t");
+	printf("\t> Test 35) ft_lstnew:\t\t");
 	test_lstnew();
 
+	printf("\t> Test 36) ft_lstadd_front:\t");
+	test_lstadd_front();
 
+	printf("\t> Test 37) ft_lstsize:\t\t");
+	test_lstsize();
+
+	printf("\t> Test 38) ft_lstlast:\t\t");
+	test_lstlast();
+
+	printf("\t> Test 39) ft_lstadd_back:\t");
+	test_lstadd_back();
+
+	printf("\t> Test 40) ft_lstdelone:\t");
+	test_lstdelone();
+
+	printf("\t> Test 41) ft_lstclear:\t\t");
+	test_lstclear();
+
+	printf("+-----------------------------------------------------------------------+\n");
 }

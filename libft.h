@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 11:05:40 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/10 16:52:56 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/17 12:02:31 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -61,8 +61,8 @@ char	**ft_split(char	const *s, char c);
 // Bonus
 int		ft_lstsize(t_list *lst);
 
-void	ft_lsadd_front(t_list **lst, t_list *new);
-void	ft_lsadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));

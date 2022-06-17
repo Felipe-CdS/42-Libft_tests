@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:20:47 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/10 13:17:57 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/17 16:24:23 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static int	test_3(){
 	test = ft_strtrim(entry, " ");
 
 	if(strcmp(real, test) != 0) test_result = KO;
-	// free(test);
+	free(test);
 	return (test_result);
 }
 
@@ -74,7 +74,6 @@ static int	test_5(){
 	char *test;
 	
 	test = ft_strtrim(entry, " ");
-
 	if(strcmp(real, test) != 0) test_result = KO;
 	free(test);
 	return (test_result);

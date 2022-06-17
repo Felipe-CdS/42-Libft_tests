@@ -6,7 +6,7 @@
 	/*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 	/*                                                +#+#+#+#+#+   +#+           */
 	/*   Created: 2022/05/13 15:59:45 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/10 17:20:37 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/17 14:05:31 by fcoutinh         ###   ########.fr       */
 	/*                                                                            */
 	/* ************************************************************************** */
 #include <unistd.h>
@@ -70,7 +70,12 @@ void	test_putnbr_fd();
 /*==========================================*/
 
 void	test_lstnew();
-
+void	test_lstadd_front();
+void	test_lstsize();
+void	test_lstlast();
+void	test_lstadd_back();
+void	test_lstdelone();
+void	test_lstclear();
 
 /*==========================================*/
 /*					Misc					*/

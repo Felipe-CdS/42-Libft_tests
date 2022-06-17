@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 17:15:21 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/06/10 12:05:28 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/17 11:33:39 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ static int	test_2(){
 }
 
 static int	test_3(){
-
 	int		i = 0, test_result = OK;
 	char 	*entry = "";
 	char 	*real[100] = {NULL};

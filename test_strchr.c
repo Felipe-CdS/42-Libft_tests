@@ -6,7 +6,7 @@
 /*   By: fcoutinh <felipe32santos@hotmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 09:42:27 by fcoutinh          #+#    #+#             */
-/*   Updated: 2022/05/27 12:15:16 by fcoutinh         ###   ########.fr       */
+/*   Updated: 2022/06/17 11:07:28 by fcoutinh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -77,6 +77,7 @@ static int	test_7(){
 static int	test_8(){
 	char			*entry = "";
 	char			search = '\0';
+	printf("%s", ft_strchr(entry, search));
 	if(CMP_CHECK)	return (KO);
 	return (OK);
 }
