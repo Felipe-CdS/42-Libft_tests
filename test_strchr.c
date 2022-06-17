@@ -12,7 +12,7 @@
 #include "libft.h"
 #include "libtests.h"
 
-#define TESTS_QUANT 10
+#define TESTS_QUANT 11
 
 #define CMP_CHECK strchr(entry, search) != ft_strchr(entry, search)
 
@@ -97,7 +97,15 @@ static int	test_10(){
 	return (OK);
 }
 
+// SChar is an int
+static int	test_11(){
+	char			*entry = "Hello World";
+	int				search = 'H' + 256;
+	if(CMP_CHECK)	return (KO);
+	return (OK);
+}
+
 void	test_strchr(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8, &test_9, &test_10};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8, &test_9, &test_10, &test_11};
 	tests_iterator(f_ptr, TESTS_QUANT);
 }

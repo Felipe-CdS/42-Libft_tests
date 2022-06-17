@@ -13,7 +13,7 @@
 #include "libft.h"
 #include "libtests.h"
 
-#define TESTS_QUANT 7
+#define TESTS_QUANT 8
 
 #define DST_ERROR ft_strncmp(real_dst, test_dst, ft_strlen(real_dst)) != 0
 #define RET_ERROR real_ret != test_ret
@@ -94,8 +94,25 @@ static int	test_4(){
 	return (OK);
 }
 
-// len too big for src
+// len == 1
 static int	test_5(){
+
+	char		*src;
+	char		real_dst[100], test_dst[100];
+	size_t		real_ret = 0, test_ret = 0;
+
+	src	= "Hello World";
+	ft_memset(real_dst, 'A', 50);
+	ft_memset(test_dst, 'A', 50);
+	real_ret = strlcpy(real_dst, 		src,	1);
+	test_ret = ft_strlcpy(test_dst, 	src,	1);
+
+	if (DST_ERROR || RET_ERROR)	return (KO);
+	return (OK);
+}
+
+// len too big for src
+static int	test_6(){
 	char		*src, real_dst[100], test_dst[100];
 	size_t		real_ret, test_ret;
 
@@ -108,7 +125,7 @@ static int	test_5(){
 }
 
 // non printable entry
-static int	test_6(){
+static int	test_7(){
 	char		real_dst[100], test_dst[100], src[100] = {'1', 'a', '\2', '\1', '\0'};
 	size_t		real_ret, test_ret;
 
@@ -120,7 +137,7 @@ static int	test_6(){
 }
 
 // non empty dst and bigger than src
-static int	test_7(){
+static int	test_8(){
 	char		*src, real_dst[100], test_dst[100];
 	size_t		real_ret, test_ret;
 
@@ -133,6 +150,6 @@ static int	test_7(){
 }
 
 void		test_strlcpy(){	
-	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7};
+	t_func_array f_ptr[TESTS_QUANT] = {&test_1, &test_2, &test_3, &test_4, &test_5, &test_6, &test_7, &test_8};
 	tests_iterator(f_ptr, TESTS_QUANT);
 }
