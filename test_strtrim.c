@@ -17,11 +17,11 @@
 
 static int	test_1(){
 	int	test_result = OK;
-	char *entry = "Hello World!";
-	char *real = "H Wrd!";
+	char *entry = "    Hello World!   ";
+	char *real = "Hello World!";
 	char *test;
 	
-	test = ft_strtrim(entry, "elo");
+	test = ft_strtrim(entry, " ");	
 
 	if(strcmp(real, test) != 0) test_result = KO;
 	free(test);
@@ -34,7 +34,7 @@ static int	test_2(){
 	char *real	= "Hello World!";
 	char *test;
 	
-	test = ft_strtrim(entry, "j");
+	test = ft_strtrim(entry, " ");
 
 	if(strcmp(real, test) != 0) test_result = KO;
 	free(test);
@@ -43,24 +43,24 @@ static int	test_2(){
 
 static int	test_3(){
 	int	test_result = OK;
-	char *entry	= "Hello World!";
-	char *real	= "Hello World!";
+	char *entry	= "lorem \n ipsum \t dolor \n sit \t amet";
+	char *real	= "lorem \n ipsum \t dolor \n sit \t amet";
 	char *test;
 	
-	test = ft_strtrim(entry, "");
+	test = ft_strtrim(entry, " ");
 
 	if(strcmp(real, test) != 0) test_result = KO;
-	free(test);
+	// free(test);
 	return (test_result);
 }
 
 static int	test_4(){
 	int	test_result = OK;
-	char *entry	= "Hello World!       ";
-	char *real	= "HelloWorld!";
+	char *entry	= "       Hello World!";
+	char *real	= "ello World!";
 	char *test;
 	
-	test = ft_strtrim(entry, " ");
+	test = ft_strtrim(entry, "H ");
 
 	if(strcmp(real, test) != 0) test_result = KO;
 	free(test);
@@ -69,11 +69,11 @@ static int	test_4(){
 
 static int	test_5(){
 	int	test_result = OK;
-	char *entry	= "";
+	char *entry	= "                ";
 	char *real	= "";
 	char *test;
 	
-	test = ft_strtrim(entry, "abc");
+	test = ft_strtrim(entry, " ");
 
 	if(strcmp(real, test) != 0) test_result = KO;
 	free(test);
